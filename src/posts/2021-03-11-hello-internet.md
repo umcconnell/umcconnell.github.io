@@ -1,6 +1,6 @@
 ---
 title: Hello Internet
-date: 2021-01-15
+date: 2021-03-11
 description: >
     Kicking off my blog with the mandatory "Hello World" introductory post...
     More posts about software, technology and science to come!
