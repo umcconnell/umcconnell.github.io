@@ -31,7 +31,9 @@ module.exports = {
                     inline: true,
                     width: 1280,
                     height: 800,
-                    timeout: 30000
+                    penthouse: {
+                        timeout: 30000
+                    }
                 }
                 const html = await critical.generate(config)
                 return html
@@ -39,6 +41,7 @@ module.exports = {
                 console.error(err)
             }
         }
+
         return content
     }
 }
