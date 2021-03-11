@@ -8,14 +8,14 @@
         <name>umcconnell</name>
     </author>
     
-    <updated>2021-01-15T00:00:00Z</updated>
+    <updated>2021-03-11T00:00:00Z</updated>
     
     <id>https://umcconnell.github.io/</id>
         <entry>
             <title>Hello Internet</title>
-            <link href="https://umcconnell.github.io/posts/2021-01-15-hello-internet/"/>
-            <updated>2021-01-15T00:00:00Z</updated>
-            <id>https://umcconnell.github.io/posts/2021-01-15-hello-internet/</id>
+            <link href="https://umcconnell.github.io/posts/2021-03-11-hello-internet/"/>
+            <updated>2021-03-11T00:00:00Z</updated>
+            <id>https://umcconnell.github.io/posts/2021-03-11-hello-internet/</id>
             <content type="html"><![CDATA[
                 <p>Hi!</p>
 <p>This is the first post on my new blog, and I’m really excited. I hope to write
