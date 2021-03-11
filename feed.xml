@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>umcconnell</title>
+    <subtitle>Just my personal website</subtitle>
+    <link href="https://umcconnell.github.io/feed.xml" rel="self" type="application/atom+xml" />
+    <link href="https://umcconnell.github.io" rel="alternate" type="text/html"/>
+    <author>
+        <name>umcconnell</name>
+    </author>
+    
+    <updated>2021-01-15T00:00:00Z</updated>
+    
+    <id>https://umcconnell.github.io/</id>
+        <entry>
+            <title>Hello Internet</title>
+            <link href="https://umcconnell.github.io/posts/2021-01-15-hello-internet/"/>
+            <updated>2021-01-15T00:00:00Z</updated>
+            <id>https://umcconnell.github.io/posts/2021-01-15-hello-internet/</id>
+            <content type="html"><![CDATA[
+                <p>Hi!</p>
+<p>This is the first post on my new blog, and I’m really excited. I hope to write
+more in the coming weeks and months, especially about technical and
+software-related topics. My goal is to write about current software side
+projects and things I’ve learned, all in the spirit of
+“Stay curious, keep learning”. Depending on how that works out, I’ll adapt if
+needed.</p>
+<h2 id="outlook">Outlook</h2>
+<p>A few topics I’d like to cover soon are AI, Rust and how I set up this blog, to
+give some ideas in case you would like to do the same. In the meantime, as this
+blog is entirely open source, I invite you to check out the
+<a href="https://github.com/umcconnell/umcconnell.github.io" target="_blank" rel="noopener noreferrer">source code<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
+        <use xlink:href="#icon-link-external"></use>
+        </svg></a> on Github,
+fork it, make it your own, or whatever you want.</p>
+<h2 id="why">Why?!?</h2>
+<p>I hope to learn something useful from this experience and gain some more
+experience building websites. Writing down ideas and summarizing problems is a
+good exercise, all while improving writing skills. A blog also let’s me document
+findings and ideas for later use or for someone else to be inspired.</p>
+<p>And maybe I can even help solve a problem on the way or motivate to learn
+something new!</p>
+<p>Feel free to comment on any post, give feedback, suggest improvements, correct
+me or whatever else you think is appropriate.</p>
+<p>Cheers!</p>
+<p>- Ulysse</p>
+
+            ]]></content>
+        </entry></feed>
