@@ -1,10 +1,9 @@
 const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
-const MemoryFileSystem = require('memory-fs')
+const { fs: mfs } = require('memfs')
 
 const isProd = process.env.ELEVENTY_ENV === 'production'
-const mfs = new MemoryFileSystem()
 
 // main entry point name
 const ENTRY_FILE_NAME = 'main.js'
@@ -58,7 +57,7 @@ module.exports = class {
         const compiler = webpack(webpackConfig)
         compiler.outputFileSystem = mfs
         compiler.inputFileSystem = fs
-        compiler.resolvers.normal.fileSystem = mfs
+        compiler.intermediateFileSystem = mfs
 
         return new Promise((resolve, reject) => {
             compiler.run((err, stats) => {
@@ -71,10 +70,14 @@ module.exports = class {
                     return
                 }
 
-                const { assets } = stats.compilation
-                const file = assets[ENTRY_FILE_NAME].source()
-
-                resolve(file)
+                mfs.readFile(
+                    './src/memory-fs/js/' + ENTRY_FILE_NAME,
+                    'utf8',
+                    (err, data) => {
+                        if (err) reject(err)
+                        else resolve(data)
+                    }
+                )
             })
         })
     }
