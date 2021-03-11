@@ -1,0 +1,41 @@
+.msg {
+    @include t(background-color, 'gray-lightest');
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-left: 6px solid #ddd;
+    border-radius: $border-radius;
+
+    @include mq('lg') {
+        padding-left: 1.5rem;
+    }
+
+    & p:last-child {
+        margin-bottom: 0;
+    }
+
+    & .msg__header {
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+
+    &.msg--note,
+    &.msg--info {
+        border-left-color: $info-blue;
+    }
+
+    &.msg--success,
+    &.msg--tip {
+        border-left-color: $success-green;
+    }
+
+    &.msg--warning {
+        border-left-color: $warning-orange;
+    }
+
+    &.msg--danger,
+    &.msg--error,
+    &.msg--stop,
+    &.msg--alert {
+        border-left-color: $danger-red;
+    }
+}

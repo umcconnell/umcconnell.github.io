@@ -1,0 +1,36 @@
+---
+layout: base
+eleventyNavigation:
+    key: Home
+---
+
+<div class="container">
+    <h1>👋 Hi</h1>
+
+    <p>
+        This is my own personal website and blog on the endless expanses of the
+        internet. Every once and while, I try to write about my ideas and
+        different technical topics, mostly related to programming. Feel free to
+        look around and explore...
+    </p>
+
+    <p>All views and opinions expressed in this blog are my own.</p>
+
+    <p>
+        By the way: This website is
+        <a href="{{ meta.github_repo }}">open source</a>. All code is licensed
+        under the MIT license, the content is available under the
+        CC-BY-SA 4.0 license, unless stated otherwise.
+    </p>
+
+    <h2 class="u-mt2">Latest posts</h2>
+    <ol>
+        {% for post in collections.posts | reverse | take(5) %}
+        <li>
+            <a href="{{ post.url | url }}">
+                {{ post.data.title }}
+            </a>
+        </li>
+        {% endfor %}
+    </ol>
+</div>

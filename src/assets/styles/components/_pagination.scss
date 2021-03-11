@@ -1,0 +1,12 @@
+.pagination {
+    text-align: center;
+    & li {
+        display: inline-block;
+        margin: 0 $spacing-x / 2;
+    }
+
+    & [aria-current] {
+        text-decoration: none;
+        color: unset;
+    }
+}

@@ -1,0 +1,27 @@
+---
+layout: base
+eleventyNavigation:
+    key: Posts
+pagination:
+    data: collections.posts
+    size: 8
+    reverse: true
+permalink: "/posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}"
+---
+
+{% import "../components/card.njk" as card %}
+{% import "../components/pagination.njk" as paginationNav %}
+
+<div class="container">
+    <h1>Archive</h1>
+
+    <ol>
+    {% for post in pagination.items  %}
+        <li>{{ card.postcard(post) }}</li>
+    {% endfor %}
+    </ol>
+
+    {% if pagination.pages.length > 1 %}
+        {{ paginationNav.pagination(page, pagination) }}
+    {% endif %}
+</div>

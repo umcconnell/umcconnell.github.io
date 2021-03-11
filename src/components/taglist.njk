@@ -1,0 +1,7 @@
+{% macro taglist(list, class="", start=1) %}
+<ul class="taglist {{class}}">
+    {% for tag in list.slice(start) %}
+        <li class="taglist__tag"><a href="{{ '/posts/tags/' + tag | url}}">#{{ tag }}</a></li>
+    {% endfor %}
+</ul>
+{% endmacro %}

@@ -1,0 +1,16 @@
+<header class="header" role="banner">
+    <div class="header__inner container">
+        <div class="header__left">
+            <a href="{{ '/' | url }}" class="header__home-link">
+                <img
+                    src="{{ "/assets/images/avatar.png" | url }}"
+                    class="header__avatar"
+                >
+                {{ meta.title }}
+            </a>
+        </div>
+        <div class="header__right">
+            {% include "navigation.njk" %}
+        </div>
+    </div>
+</header>

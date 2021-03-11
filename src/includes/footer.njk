@@ -1,0 +1,39 @@
+<footer class="footer" role="contentinfo">
+    <div class="footer__inner container">
+        <div class="footer__left"> 
+            &copy; Copyright
+            {{ build.timestamp | dateToFormat('yyyy') }}
+            {{ meta.author }}
+            <p>
+            Code:
+            <a
+                rel="license"
+                href="{{ meta.github_repo + '/blob/master/LICENSE.md' }}"
+                target="_blank"
+            >MIT License</a>,
+            Content: 
+            <a
+                rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/"
+                target="_blank"
+            >
+                <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
+            </a>
+            </p>
+            <p>
+            Built with <a href="https://11ty.dev" target="_blank">11ty</a>,
+            using the
+            <a
+                href="https://github.com/maxboeck/eleventastic"
+                target="_blank"
+            >eleventastic</a> template.
+            </p>
+            <!--<p>Legal | Privacy Policy</p>-->
+        </div>
+
+        <div class="footer__right">
+            <a href="{{ meta.github_repo }}">{% icon "github" %}</a>
+            <a href="{{ '/feed.xml' | url }}">{% icon "rss" %}</a>
+        </div>
+    </div>
+</footer>

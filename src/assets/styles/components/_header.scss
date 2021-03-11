@@ -1,0 +1,23 @@
+.header {
+    padding: $spacing-y 0;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__home-link {
+        display: inline-block;
+        text-decoration: none;
+        color: unset;
+    }
+
+    &__avatar {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%; //$border-radius;
+        margin-right: 0.5rem;
+    }
+}

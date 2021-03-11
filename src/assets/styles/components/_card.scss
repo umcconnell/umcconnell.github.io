@@ -1,0 +1,29 @@
+.card {
+    margin: $spacing-y 0;
+
+    & .card__title {
+        // font-weight: normal;
+        margin: 0;
+
+        & a {
+            color: $brand-color-primary;
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    & .card__description {
+        margin: $spacing-y-small 0;
+    }
+}
+
+.card--post {
+    // Apply margin-top to li to add spacing between tags on small screens
+    & .card--post__taglist li {
+        margin-top: $spacing-y-small;
+    }
+}

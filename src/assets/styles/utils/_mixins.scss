@@ -1,0 +1,147 @@
+//--------------------
+// SCSS MIXINS
+//--------------------
+@function transparentize-light($color) {
+    @return transparentize($color, 0.1);
+}
+@function transparentize-strong($color) {
+    @return transparentize($color, 0.5);
+}
+
+@mixin themed-property(
+    $theme,
+    $property,
+    $color,
+    $additionalPropertiesUpFront,
+    $additionalProperties,
+    $transform: false
+) {
+    @if $transform {
+        $resolved: map-get($theme, $color);
+        $value: call(get-function($transform), $resolved);
+
+        #{$property}: unquote(
+            $additionalPropertiesUpFront +
+                ' ' +
+                $value +
+                ' ' +
+                $additionalProperties
+        );
+    } @else {
+        #{$property}: unquote(
+            $additionalPropertiesUpFront +
+                ' ' +
+                map-get($theme, $color) +
+                $additionalProperties
+        );
+    }
+}
+
+@mixin t(
+    $property,
+    $color,
+    $additionalPropertiesPositionIsFront: '',
+    $additionalProperties: '',
+    $transform: false
+) {
+    $light: map-get($themes, 'light-theme');
+    $dark: map-get($themes, 'dark-theme');
+
+    @include themed-property(
+        $light,
+        $property,
+        $color,
+        $additionalPropertiesPositionIsFront,
+        $additionalProperties,
+        $transform
+    );
+
+    @media (prefers-color-scheme: dark) {
+        @include themed-property(
+            $dark,
+            $property,
+            $color,
+            $additionalPropertiesPositionIsFront,
+            $additionalProperties,
+            $transform
+        );
+    }
+}
+
+@mixin mq($name) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin mq-down($name) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (max-width: ($min - 1px)) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin hover-focus {
+    &:hover,
+    &:focus {
+        @content;
+    }
+}
+
+@mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@mixin sr-only-focusable {
+    &:active,
+    &:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+    }
+}
+
+@mixin hyphenate() {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+@mixin coverall() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@mixin scrollable() {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@mixin button-reset() {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+}

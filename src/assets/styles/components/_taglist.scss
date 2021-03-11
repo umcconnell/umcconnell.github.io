@@ -1,0 +1,19 @@
+.taglist {
+    &__tag {
+        display: inline-block;
+        padding: 0 0.5rem;
+        // background-color: $gray-light;
+        background-color: $brand-color-primary;
+        color: white;
+        border-radius: $border-radius;
+
+        & a {
+            color: white;
+            text-decoration: none;
+        }
+
+        &:not(:first-child) {
+            margin-left: $spacing-x-small;
+        }
+    }
+}

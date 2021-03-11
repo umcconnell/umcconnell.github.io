@@ -1,0 +1,34 @@
+{% macro pagination(page, order, class="", label="pagination") %}
+<nav aria-label="{{ label }}" class="pagination {{ class }}">
+    <ol>
+        <li>
+            {% if page.url != order.href.first %}
+            <a href="{{ order.href.first | url}}" aria-label="first page">&laquo;</a>
+            {% else %}&laquo;{% endif %}
+        </li>
+        <li>
+            {% if order.href.previous %}
+            <a href="{{ order.href.previous | url }}" aria-label="previous page">&lsaquo;</a>
+            {% else %}&lsaquo;{% endif %}
+        </li>
+        {% for pageEntry in order.pages %}
+            <li>
+                <a href="{{ order.hrefs[ loop.index0 ] | url }}"
+                {% if page.url == order.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>
+                Page {{ loop.index }}
+                </a>
+            </li>
+        {%- endfor %}
+        <li>
+            {% if order.href.next %}
+            <a href="{{ order.href.next | url }}" aria-label="next page">&rsaquo;</a>
+            {% else %}&rsaquo;{% endif %}
+        </li>
+        <li>
+            {% if page.url != order.href.last %}
+            <a href="{{ order.href.last | url }}" aria-label="last page">&raquo;</a>
+            {% else %}&raquo;{% endif %}
+        </li>
+    </ol>
+</nav>
+{% endmacro %}

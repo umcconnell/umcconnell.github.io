@@ -1,0 +1,53 @@
+{% import "../components/taglist.njk" as taglist %}
+
+{% extends "src/layouts/base.njk" %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css" integrity="sha256-0dkohC9ZEupqWbq0hS5cVR4QQXJ+mp6N2oJyuks6gt0=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha256-tn6hZ2YGDv0w1/DaFL4MiUoXuAVclrtFZs13ch3TB9M=" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+<article class="container post">
+    <header class="post__heading">
+        <h1 class="post__title">{{ title }}</h1>
+        {{ taglist.taglist(tags, "post__tags") }}
+        <em class="post__date">Published on {{ date | dateLong }}</em>
+        <p class="post__description">{{description}}</p>
+    </header>
+
+    <div class="post__content markdown">
+        {{ content | safe }}
+    </div>
+
+
+    <footer class="post__footer">
+        <div class="links">
+            <a
+                href="{{ '/posts/' | url }}"
+                class="back"
+            >{% icon "arrow-left" %}Back to Posts</a>
+
+            <a
+                href="{{meta.github_repo}}/blob/main/{{ page.inputPath }}"
+                class="edit"
+                target="_blank"
+            >{% icon "pencil" %}Edit on Github</a>
+        </div>
+
+        <div class="post__comments">
+            <h2>Comments</h2>
+            {# Comments function only in production #}
+            {% if build.env === "production" %}
+                <script
+                    src="https://utteranc.es/client.js"
+                    repo="{{ meta.comments_repo }}"
+                    issue-term="pathname"
+                    label="comment"
+                    theme="github-light"
+                    crossorigin="anonymous"
+                async></script>
+            {% endif %}
+    </footer>
+</article>
+{% endblock %}

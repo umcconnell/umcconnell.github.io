@@ -1,0 +1,52 @@
+.nav {
+    &__menu {
+        display: none;
+        @include coverall();
+        position: fixed;
+        @include t(
+            background-color,
+            'bg-color',
+            $transform: 'transparentize-light'
+        );
+    }
+
+    &__link {
+        display: block;
+        padding: 0.5em 1em;
+        text-decoration: none;
+    }
+    &__toggle {
+        @include button-reset;
+    }
+
+    @include mq-down(lg) {
+        &__menu {
+            height: 100vh;
+            padding-top: 3 * $spacing-y;
+            z-index: map-get($z-layers, 'nav');
+            text-align: center;
+            font-size: 1.5 * $font-size-base;
+        }
+
+        &__toggle {
+            position: relative;
+            z-index: map-get($z-layers, 'nav') + 1;
+        }
+
+        &.is-open &__menu {
+            display: block;
+            animation: animation-fadeIn 0.2s;
+        }
+    }
+
+    @include mq(lg) {
+        &__toggle {
+            display: none;
+        }
+        &__menu {
+            display: flex;
+            position: static;
+            background-color: transparent;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+---
+layout: base
+pagination:
+    data: collections
+    size: 1
+    alias: tag
+    filter:
+        - all
+permalink: '/posts/tags/{{ tag }}/'
+---
+
+{% import "../components/card.njk" as card %}
+
+<div class="container">
+    <h1>Posts Tagged "{{ tag }}"</h1>
+
+    <ul>
+        {% set tags = collections[ tag ] %}
+        {% for post in tags | reverse %}
+            <li>{{ card.postcard(post) }}</li>
+        {% endfor %}
+    </ul>
+</div>
