@@ -21,11 +21,13 @@ const shortcodes = {
 }
 
 const pairedShortcodes = {
-    msg: function (content, type = 'info', show_header = true) {
+    msg: function (content, type = 'info', show_header = true, title) {
         return `<div class="msg msg--${type}">
         ${
             show_header
-                ? `<div class="msg__header">${type.toUpperCase()}</div>`
+                ? `<div class="msg__header">${
+                      title ? title : type.toUpperCase()
+                  }</div>`
                 : ''
         }${content}</div>`
     },
