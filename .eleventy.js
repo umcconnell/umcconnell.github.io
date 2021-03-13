@@ -58,8 +58,15 @@ module.exports = function (config) {
     // Deep-Merge
     config.setDataDeepMerge(true)
 
-    // Ignore .gitignore in development mode to serve post drafts
-    if (process.env.ELEVENTY_ENV == 'development') config.setUseGitIgnore(false)
+    if (process.env.ELEVENTY_ENV == 'development') {
+        // Copy images in post drafts
+        config.addPassthroughCopy('src/posts/drafts/**/*.jpg')
+        config.addPassthroughCopy('src/posts/drafts/**/*.png')
+        config.addPassthroughCopy('src/posts/drafts/**/*.svg')
+
+        // Ignore .gitignore in development mode to serve post drafts
+        config.setUseGitIgnore(false)
+    }
 
     // Base Config
     return {
