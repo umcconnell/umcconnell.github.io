@@ -64,6 +64,8 @@ module.exports = function (config) {
         config.addPassthroughCopy('src/posts/drafts/**/*.png')
         config.addPassthroughCopy('src/posts/drafts/**/*.svg')
 
+        config.addWatchTarget('src/posts/drafts/')
+
         // Ignore .gitignore in development mode to serve post drafts
         config.setUseGitIgnore(false)
     }
