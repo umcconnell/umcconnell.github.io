@@ -58,6 +58,9 @@ module.exports = function (config) {
     // Deep-Merge
     config.setDataDeepMerge(true)
 
+    // Ignore .gitignore in development mode to serve post drafts
+    if (process.env.ELEVENTY_ENV == 'development') config.setUseGitIgnore(false)
+
     // Base Config
     return {
         dir: {
