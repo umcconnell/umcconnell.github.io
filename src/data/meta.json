@@ -1,10 +1,15 @@
 {
     "title": "umcconnell",
-    "author": "Ulysse McConnell",
     "description": "Just my personal website",
+    "lang": "en",
+    "locale": "en_us",
+
+    "author": "Ulysse McConnell",
+    "social_media": {
+        "github": "https://github.com/umcconnell/"
+    },
+
     "url": "https://umcconnell.github.io",
     "github_repo": "https://github.com/umcconnell/umcconnell.github.io",
-    "comments_repo": "umcconnell/comments",
-    "lang": "en",
-    "locale": "en_us"
+    "comments_repo": "umcconnell/comments"
 }
