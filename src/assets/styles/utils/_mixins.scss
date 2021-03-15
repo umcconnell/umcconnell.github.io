@@ -40,7 +40,7 @@
 @mixin t(
     $property,
     $color,
-    $additionalPropertiesPositionIsFront: '',
+    $additionalPropertiesUpFront: '',
     $additionalProperties: '',
     $transform: false
 ) {
@@ -51,7 +51,7 @@
         $light,
         $property,
         $color,
-        $additionalPropertiesPositionIsFront,
+        $additionalPropertiesUpFront,
         $additionalProperties,
         $transform
     );
@@ -61,7 +61,7 @@
             $dark,
             $property,
             $color,
-            $additionalPropertiesPositionIsFront,
+            $additionalPropertiesUpFront,
             $additionalProperties,
             $transform
         );
