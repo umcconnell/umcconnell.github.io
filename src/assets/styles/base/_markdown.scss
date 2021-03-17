@@ -104,6 +104,14 @@
 }
 
 //------
+// Video
+//------
+
+.markdown .video {
+    max-width: 100%;
+}
+
+//------
 // HR
 //------
 .markdown hr {
@@ -450,11 +458,12 @@
     border: 0;
 }
 
-//----------------------
-//Image and table sizing
-//----------------------
+//-----------------------------
+//Image, table and video sizing
+//-----------------------------
 .markdown img,
-.markdown table {
+.markdown table,
+.markdown .video {
     display: block;
     margin: 1rem auto;
 }
