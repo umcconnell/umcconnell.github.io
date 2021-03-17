@@ -418,7 +418,7 @@
     font-size: 85%;
     @include t(
         background-color,
-        gray-light,
+        'gray-light',
         $transform: 'transparentize-strong'
     );
     border-radius: 3px;
