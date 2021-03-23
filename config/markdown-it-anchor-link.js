@@ -1,6 +1,6 @@
 const { shortcodes } = require('../utils/shortcodes.js')
 
-module.exports = function externalLinks(
+module.exports = function anchorLink(
     md,
     { icon = shortcodes.icon('link') } = {}
 ) {
