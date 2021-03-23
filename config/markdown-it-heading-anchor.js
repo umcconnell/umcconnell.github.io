@@ -4,17 +4,7 @@ module.exports = function externalLinks(
     md,
     { icon = shortcodes.icon('link') } = {}
 ) {
-    let defaultRender = function (tokens, idx, options, env, self) {
-        return self.renderToken(tokens, idx, options)
-    }
-
-    md.renderer.rules.heading_close = function (
-        tokens,
-        idx,
-        options,
-        env,
-        self
-    ) {
+    md.renderer.rules.heading_close = function (tokens, idx) {
         let openTag = idx
         let nestingLevel = 1
 
