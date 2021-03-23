@@ -1,5 +1,8 @@
 # umcconnell.github.io
 
+[![Lint](https://github.com/umcconnell/umcconnell.github.io/actions/workflows/lint.yml/badge.svg)](https://github.com/umcconnell/umcconnell.github.io/actions/workflows/lint.yml)
+[![Github Pages](https://github.com/umcconnell/umcconnell.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/umcconnell/umcconnell.github.io/actions/workflows/deploy.yml)
+
 Just my personal blog.
 
 ## Table of Contents
