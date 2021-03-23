@@ -10,6 +10,7 @@
         "eleventy:debug": "cross-env ELEVENTY_ENV=development DEBUG=Eleventy* eleventy --serve",
         "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
         "clean": "del-cli dist",
+        "lint": "npx prettier --check .",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -19,7 +20,7 @@
     "author": "Ulysse McConnell",
     "license": "MIT",
     "dependencies": {
-        "@11ty/eleventy": "^0.11.1",
+        "@11ty/eleventy": "^0.12.1",
         "@11ty/eleventy-navigation": "^0.1.6",
         "@11ty/eleventy-plugin-rss": "^1.1.0",
         "@babel/core": "^7.13.10",
@@ -45,6 +46,7 @@
     },
     "devDependencies": {
         "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
-        "cross-env": "^7.0.3"
+        "cross-env": "^7.0.3",
+        "prettier": "2.2.1"
     }
 }
