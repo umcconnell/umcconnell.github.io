@@ -10,6 +10,9 @@
     },
 
     "url": "https://umcconnell.github.io",
-    "github_repo": "https://github.com/umcconnell/umcconnell.github.io",
-    "comments_repo": "umcconnell/comments"
+    "code": {
+        "repo": "https://github.com/umcconnell/umcconnell.github.io",
+        "branch": "main",
+        "comments": "umcconnell/comments"
+    }
 }
