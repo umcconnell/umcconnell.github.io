@@ -29,7 +29,7 @@
             >{% icon "arrow-left" %}Back to Posts</a>
 
             <a
-                href="{{meta.github_repo}}/blob/main/{{ page.inputPath }}"
+                href="{{meta.code.repo}}/blob/{{meta.code.branch}}/{{page.inputPath}}"
                 class="edit"
                 target="_blank"
             >{% icon "pencil" %}Edit on Github</a>
@@ -41,7 +41,7 @@
             {% if build.env === "production" %}
                 <script
                     src="https://utteranc.es/client.js"
-                    repo="{{ meta.comments_repo }}"
+                    repo="{{ meta.code.comments }}"
                     issue-term="pathname"
                     label="comment"
                     theme="preferred-color-scheme"
