@@ -17,7 +17,7 @@
             <updated>2021-03-13T00:00:00Z</updated>
             <id>https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/</id>
             <content type="html"><![CDATA[
-                <p>You’ve probably alread heard of the Fibonacci sequence. It is a sequence of
+                <p>You’ve probably already heard of the Fibonacci sequence. It is a sequence of
 numbers named after the mathematician
 <a href="https://en.wikipedia.org/wiki/Fibonacci" target="_blank" rel="noopener noreferrer">Leonardo of Pisa<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
@@ -109,7 +109,7 @@ the range is non-inclusive for its end.</p>
 <h2 id="2-recursion">#2: Recursion<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#2-recursion" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>Another approach to implementing the Fibonacci algorithm would be to just
-translate the recursive mathematical defintion from the introduction into Rust
+translate the recursive mathematical definition from the introduction into Rust
 code. Add the following function in <code>src/lib.rs</code>:</p>
 <pre class="language-rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">fib_recursive</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">usize</span> <span class="token punctuation">{</span><br />    <span class="token keyword">match</span> n <span class="token punctuation">{</span><br />        <span class="token number">0</span> <span class="token operator">|</span> <span class="token number">1</span> <span class="token operator">=></span> <span class="token number">1</span><span class="token punctuation">,</span><br />        _ <span class="token operator">=></span> <span class="token function">fib_recursive</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fib_recursive</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><br />    <span class="token punctuation">}</span><br /><span class="token punctuation">}</span></code></pre>
 <p>In this case, the match operator comes in really handy. It works just like the
@@ -122,7 +122,7 @@ However, it is important not to end with a semi-colon, which would make the
 function return nothing (or <code>()</code>, to be more precise).</p>
 <p>When we take a close look at this function, it might become clear that it is
 pretty inefficient. When calculating <code>fib_recursive(n)</code>, we end up calculating
-the Fibonacci sequence twice every step down from <code>n</code>, allthough
+the Fibonacci sequence twice every step down from <code>n</code>, although
 it would be enough to calculate the sequence once. This is where
 <a href="https://en.wikipedia.org/wiki/Memoization" target="_blank" rel="noopener noreferrer">memoization<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
@@ -232,7 +232,7 @@ the last two elements <code>a</code> and <code>b</code> of the sequence, startin
 then generate the next value just as in the standard approach:</p>
 <pre class="language-rust"><code class="language-rust"><span class="token keyword">pub</span> <span class="token keyword">struct</span> <span class="token type-definition class-name">FibIterator</span> <span class="token punctuation">{</span><br />    a<span class="token punctuation">:</span> <span class="token keyword">usize</span><span class="token punctuation">,</span><br />    b<span class="token punctuation">:</span> <span class="token keyword">usize</span><br /><span class="token punctuation">}</span><br /><br /><span class="token keyword">impl</span> <span class="token class-name">Default</span> <span class="token keyword">for</span> <span class="token class-name">FibIterator</span> <span class="token punctuation">{</span><br />    <span class="token keyword">fn</span> <span class="token function-definition function">default</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">Self</span> <span class="token punctuation">{</span><br />        <span class="token class-name">FibIterator</span> <span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><br />    <span class="token punctuation">}</span><br /><span class="token punctuation">}</span><br /><br /><span class="token keyword">impl</span> <span class="token class-name">Iterator</span> <span class="token keyword">for</span> <span class="token class-name">FibIterator</span> <span class="token punctuation">{</span><br />    <span class="token keyword">type</span> <span class="token class-name">Item</span> <span class="token operator">=</span> <span class="token keyword">usize</span><span class="token punctuation">;</span><br /><br />    <span class="token keyword">fn</span> <span class="token function-definition function">next</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token keyword">mut</span> <span class="token keyword">self</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token keyword">Self</span><span class="token punctuation">::</span><span class="token class-name">Item</span><span class="token operator">></span> <span class="token punctuation">{</span><br />        <span class="token keyword">let</span> curr <span class="token operator">=</span> <span class="token keyword">self</span><span class="token punctuation">.</span>a<span class="token punctuation">;</span><br />        <span class="token keyword">self</span><span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token keyword">self</span><span class="token punctuation">.</span>b<span class="token punctuation">;</span><br />        <span class="token keyword">self</span><span class="token punctuation">.</span>b <span class="token operator">=</span> curr <span class="token operator">+</span> <span class="token keyword">self</span><span class="token punctuation">.</span>a<span class="token punctuation">;</span><br /><br />        <span class="token class-name">Some</span><span class="token punctuation">(</span>curr<span class="token punctuation">)</span><br />    <span class="token punctuation">}</span><br /><span class="token punctuation">}</span></code></pre>
 <p>A few things to notice here. First, notice how we all methods of the struct are
-wrapped in <code>impl</code> blocks. This seperates the struct definition from it’s
+wrapped in <code>impl</code> blocks. This separates the struct definition from it’s
 methods, helping your code stay clean.</p>
 <p>Also, we write a default method that takes no arguments and returns an
 initialized <code>FibIterator</code>. As this method is not associated to a struct
@@ -276,7 +276,7 @@ opening <code>target/criterion/Fibonacci/report/index.html</code>. Running on my
 gave me the following stats:</p>
 <p><img src="https://umcconnell.github.io/assets/images/posts/fibonacci-rust/perf_plot.svg" alt="Performance plot of the different methods" /></p>
 <p>You can clearly see, that the naive recursive solution is the least performant
-approach, as its execution time increases (exponentially, but not visible whith
+approach, as its execution time increases (exponentially, but not visible with
 2 inputs) with the workload. The memoized version, in contrast, shows a great
 improvement, but it still incurs the performance overhead of initializing and
 managing the memo, making it less performant than the two last approaches.</p>
@@ -293,10 +293,10 @@ Fibonacci sequence.</p>
 performant and can become too slow to calculate for larger inputs. The memoized
 solution is interesting, in that it combines the conciseness of the recursive
 approach with a greater speed. The standard approach, on the other hand, seems
-to be the most performant, but it is arguably the least elegant.</p>
+to be the fastest, but it is arguably the least elegant.</p>
 <p>Finally, the iterator solution appears to be by far the most versatile while at
-the same time being very performant. Additionally, it allows the user to work
-with the sequence in a very convenient way, e.g. by filtering, mapping, etc.</p>
+the same time being very fast. Additionally, it allows the user to work with the
+sequence in a very convenient way, e.g. by filtering, mapping, etc.</p>
 <p>Overall, it becomes clear that iterators are a very versatile and performant
 aspect of Rust, that are also worth considering in other languages such as
 Python or JavaScript.</p>
