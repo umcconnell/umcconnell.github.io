@@ -11,7 +11,7 @@ tags:
     - fibonacci
 ---
 
-You've probably alread heard of the Fibonacci sequence. It is a sequence of
+You've probably already heard of the Fibonacci sequence. It is a sequence of
 numbers named after the mathematician
 [Leonardo of Pisa](https://en.wikipedia.org/wiki/Fibonacci), that's generated
 using a simple rule, yet pops up in many unexpected places in math and nature,
@@ -140,7 +140,7 @@ the range is non-inclusive for its end.
 ## \#2: Recursion
 
 Another approach to implementing the Fibonacci algorithm would be to just
-translate the recursive mathematical defintion from the introduction into Rust
+translate the recursive mathematical definition from the introduction into Rust
 code. Add the following function in `src/lib.rs`:
 
 ```rust
@@ -164,7 +164,7 @@ function return nothing (or `()`, to be more precise).
 
 When we take a close look at this function, it might become clear that it is
 pretty inefficient. When calculating `fib_recursive(n)`, we end up calculating
-the Fibonacci sequence twice every step down from `n`, allthough
+the Fibonacci sequence twice every step down from `n`, although
 it would be enough to calculate the sequence once. This is where
 [memoization](https://en.wikipedia.org/wiki/Memoization) comes in.
 
@@ -284,7 +284,7 @@ impl Iterator for FibIterator {
 ```
 
 A few things to notice here. First, notice how we all methods of the struct are
-wrapped in `impl` blocks. This seperates the struct definition from it's
+wrapped in `impl` blocks. This separates the struct definition from it's
 methods, helping your code stay clean.
 
 Also, we write a default method that takes no arguments and returns an
@@ -378,7 +378,7 @@ gave me the following stats:
 ![Performance plot of the different methods](/assets/images/posts/fibonacci-rust/perf_plot.svg)
 
 You can clearly see, that the naive recursive solution is the least performant
-approach, as its execution time increases (exponentially, but not visible whith
+approach, as its execution time increases (exponentially, but not visible with
 2 inputs) with the workload. The memoized version, in contrast, shows a great
 improvement, but it still incurs the performance overhead of initializing and
 managing the memo, making it less performant than the two last approaches.
@@ -399,11 +399,11 @@ Although the recursive solution is short and concise, it is by far the least
 performant and can become too slow to calculate for larger inputs. The memoized
 solution is interesting, in that it combines the conciseness of the recursive
 approach with a greater speed. The standard approach, on the other hand, seems
-to be the most performant, but it is arguably the least elegant.
+to be the fastest, but it is arguably the least elegant.
 
 Finally, the iterator solution appears to be by far the most versatile while at
-the same time being very performant. Additionally, it allows the user to work
-with the sequence in a very convenient way, e.g. by filtering, mapping, etc.
+the same time being very fast. Additionally, it allows the user to work with the
+sequence in a very convenient way, e.g. by filtering, mapping, etc.
 
 Overall, it becomes clear that iterators are a very versatile and performant
 aspect of Rust, that are also worth considering in other languages such as
