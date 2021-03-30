@@ -40,7 +40,7 @@ const shortcodes = {
                     height: 100%;
                 }
                 
-                img,span{
+                img,span {
                     position: absolute;
                     width: 100%;
                     top: 0;
@@ -49,11 +49,13 @@ const shortcodes = {
                 }
                 
                 span {
-                    height: 1.5em;
-                    text-align: center;
+                    display: flex;
+                    background-color: rgba(51, 51, 51, 40%);
+                    align-items: center;
+                    justify-content: center;
                     font: 48px/1.5 sans-serif;
                     color: white;
-                    text-shadow: 0 0 0.5em black;
+                    text-shadow: 0 0 1em black;
                 }
             </style>
             <a href='${video}?autoplay=1'>
