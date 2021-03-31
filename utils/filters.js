@@ -30,5 +30,9 @@ module.exports = {
 
     take: function (arr, amount) {
         return arr.slice(0, amount)
+    },
+
+    sourceRepo: function (path) {
+        return `${this.ctx.meta.code.repo}/tree/${this.ctx.meta.code.branch}/${path}`
     }
 }
