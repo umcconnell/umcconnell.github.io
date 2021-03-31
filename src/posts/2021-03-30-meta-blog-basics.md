@@ -19,7 +19,7 @@ series. Enjoy!
 
 This tutorial is primarily meant for beginners. It explains cloning this blog
 from Github, personalizing it with custom icons, name and color, and finally
-publishing it with Github pages. [Part 2](#)
+publishing it with Github pages. [Part 2](/posts/2021-03-31-meta-blog-advanced/)
 goes further into the technical details of the blog.
 
 If you prefer getting started right away, feel free to skip to the
@@ -320,4 +320,4 @@ personalizing and publishing your next blog. Feel free to have a look:
 {% ytvideo 'wVjtl6qb_II' %}
 
 For a look at the technical details of this blog, head over to
-[Part 2](#) of this series.
+[Part 2](/posts/2021-03-31-meta-blog-advanced/) of this series.
