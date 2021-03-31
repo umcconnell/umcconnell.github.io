@@ -71,7 +71,7 @@ module.exports = class {
                 }
 
                 mfs.readFile(
-                    './src/memory-fs/js/' + ENTRY_FILE_NAME,
+                    webpackConfig.output.path + '/' + ENTRY_FILE_NAME,
                     'utf8',
                     (err, data) => {
                         if (err) reject(err)
