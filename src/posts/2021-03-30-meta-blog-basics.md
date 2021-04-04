@@ -166,6 +166,20 @@ change the footer or the about page of the blog.
 The `url` should contain the final URL of the website, i.e.
 `GH_USERNAME.github.io`, where `GH_USERNAME` is your Github username.
 
+{% msg 'info', true, 'Custom domain' %}
+
+If you do not want to use a custom domain name for your website, such as
+`example.com`, set the `custom_domain` field to `false`.
+
+If you own a domain and want to set it up for your blog, you can specify your
+custom domain in this field. This then generates a CNAME file in the build
+output for you to configure with Github pages. See
+[this article](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+in the Github docs on for instructions on how to set up a custom domain for your
+site.
+
+{% endmsg %}
+
 Most importantly however, change the fields in the `code` section of the
 webmanifest:
 
