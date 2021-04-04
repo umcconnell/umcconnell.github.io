@@ -10,6 +10,7 @@
     },
 
     "url": "https://umcconnell.github.io",
+    "custom_domain": "www.umcconnell.net",
     "code": {
         "repo": "https://github.com/umcconnell/umcconnell.github.io",
         "branch": "main",
