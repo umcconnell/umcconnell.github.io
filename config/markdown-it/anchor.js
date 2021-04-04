@@ -1,5 +1,5 @@
 const anchor = require('markdown-it-anchor')
-const { slugify } = require('../utils/markdown')
+const { slugify } = require('../../utils/markdown')
 
 const config = { slugify }
 

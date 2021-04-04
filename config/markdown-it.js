@@ -1,11 +1,11 @@
 const markdownIt = require('markdown-it')
 
-const katex = require('./katex')
-const anchor = require('./markdown-it-anchor')
-const footnote = require('./markdown-it-footnote')
+const katex = require('./markdown-it/katex')
+const anchor = require('./markdown-it/anchor')
+const footnote = require('./markdown-it/footnote')
 
-let externalLinks = require('./markdown-it-external-link')
-let anchorLink = require('./markdown-it-anchor-link')
+let externalLinks = require('./markdown-it/external-link')
+let anchorLink = require('./markdown-it/anchor-link')
 
 const config = {
     html: true,

@@ -1,4 +1,4 @@
-const { shortcodes } = require('../utils/shortcodes.js')
+const { shortcodes } = require('../../utils/shortcodes.js')
 
 module.exports = function anchorLink(
     md,
