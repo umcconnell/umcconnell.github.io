@@ -1,7 +1,6 @@
 const markdownIt = require('markdown-it')
 
-const katex = require('@iktakahiro/markdown-it-katex')
-const katexConfig = require('./katex')
+const katex = require('./katex')
 
 const anchor = require('markdown-it-anchor')
 const anchorConfig = require('./markdown-it-anchor')
@@ -20,7 +19,7 @@ const config = {
 
 const md = markdownIt(config)
     .use(footnote)
-    .use(katex, katexConfig)
+    .use(katex)
     .use(anchor, anchorConfig)
     .use(externalLinks)
     .use(anchorLink)

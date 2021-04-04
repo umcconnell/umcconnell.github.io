@@ -1,8 +1,10 @@
+const katex = require('@iktakahiro/markdown-it-katex')
+
 const macros = {
     '\\f': '#1f(#2)'
 }
 
-module.exports = {
+const config = {
     displayMode: true,
     leqno: false,
     fleqn: false,
@@ -12,4 +14,8 @@ module.exports = {
     output: 'htmlAndMathml',
     trust: true,
     macros
+}
+
+module.exports = function katexPlugin(md) {
+    md.use(katex, config)
 }
