@@ -210,7 +210,7 @@ using <a href="https://katex.org/" target="_blank" rel="noopener noreferrer">KaT
         <use xlink:href="#icon-link-external"></use>
         </svg></a>, which allows you to write TeX-like
 expressions. All KaTeX configurations are located in
-<a href="https://github.com/umcconnell/umcconnell.github.io/tree/main/config/katex.js" target="_blank" rel="noopener noreferrer"><code>config/katex.js</code><svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
+<a href="https://github.com/umcconnell/umcconnell.github.io/tree/main/config/markdown-it/katex.js" target="_blank" rel="noopener noreferrer"><code>config/markdown-it/katex.js</code><svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
         </svg></a>.</p>
 <p>For inline math expressions, wrap your code in single dollar signs: <code>$math$</code>.
@@ -502,6 +502,19 @@ source and comment repositories for the blog, etc.</p>
 change the footer or the about page of the blog.</p>
 <p>The <code>url</code> should contain the final URL of the website, i.e.
 <code>GH_USERNAME.github.io</code>, where <code>GH_USERNAME</code> is your Github username.</p>
+<div class="msg msg--info">
+        <div class="msg__header">Custom domain</div>
+<p>If you do not want to use a custom domain name for your website, such as
+<code>example.com</code>, set the <code>custom_domain</code> field to <code>false</code>.</p>
+<p>If you own a domain and want to set it up for your blog, you can specify your
+custom domain in this field. This then generates a CNAME file in the build
+output for you to configure with Github pages. See
+<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener noreferrer">this article<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
+        <use xlink:href="#icon-link-external"></use>
+        </svg></a>
+in the Github docs on for instructions on how to set up a custom domain for your
+site.</p>
+</div>
 <p>Most importantly however, change the fields in the <code>code</code> section of the
 webmanifest:</p>
 <ul>
