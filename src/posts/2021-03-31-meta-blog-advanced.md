@@ -212,7 +212,7 @@ The paired shortcodes available out of the box are:
 You can also include math expressions in your post. The expressions are compiled
 using [KaTeX](https://katex.org/), which allows you to write TeX-like
 expressions. All KaTeX configurations are located in
-[`config/katex.js`]({{ 'config/katex.js' | sourceRepo }}).
+[`config/markdown-it/katex.js`]({{ 'config/markdown-it/katex.js' | sourceRepo }}).
 
 For inline math expressions, wrap your code in single dollar signs: `$math$`.
 For example, you can easily include fractions:
