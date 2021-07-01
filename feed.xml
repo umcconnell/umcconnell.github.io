@@ -22,7 +22,7 @@ basic setup and customization of this blog for your own purposes. In this part,
 I will go through a few technical details, tips and additional notes, that can
 allow you to extend the site and troubleshoot errors. This part can also serve
 as a project reference or documentation of some sort.</p>
-<h2 id="overview">Overview<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#overview" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="overview" tabindex="-1">Overview<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#overview" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>Before we go into detail about different aspects of the website, here’s a quick
 overview of all the different folders and what they contain:</p>
@@ -50,7 +50,7 @@ overview of all the different folders and what they contain:</p>
 │  └── posts             Markdown posts
 └── utils                JS utilities (e.g. filters, shortcodes)
 </code></pre>
-<h2 id="styling">Styling<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#styling" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="styling" tabindex="-1">Styling<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#styling" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>Styling is done using <a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer">SCSS<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
@@ -94,7 +94,7 @@ in the
         <use xlink:href="#icon-link-external"></use>
         </svg></a>
 file. In practice, you shouldn’t need to modify this file.</p>
-<h3 id="theming">Theming<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#theming" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="theming" tabindex="-1">Theming<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#theming" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>The blog supports adaptive light and dark themes out of the box (based on the
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank" rel="noopener noreferrer"><code>prefers-color-scheme</code><svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
@@ -118,7 +118,7 @@ theme. The mixin takes additional optional arguments, which you can find in the
 <a href="https://github.com/umcconnell/umcconnell.github.io/tree/main/src/assets/styles/utils/_mixins.scss#L40" target="_blank" rel="noopener noreferrer">mixin’s source<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
         </svg></a>.</p>
-<h3 id="breakpoints">Breakpoints<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#breakpoints" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="breakpoints" tabindex="-1">Breakpoints<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#breakpoints" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>Breakpoints are also quickly defined using SCSS mixins. There are two mixins,
 <code>mq</code> and <code>mq-down</code>, which provide breakpoints starting at, and going up to, a
@@ -128,7 +128,7 @@ example use of breakpoints is when styling the navbar. The following declaration
 hides the navigation burger menu for large screens (starting at 940px in width)
 and up:</p>
 <pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> <span class="token function">mq</span><span class="token punctuation">(</span>lg<span class="token punctuation">)</span> <span class="token punctuation">{</span><br />    <span class="token selector"><span class="token parent important">&amp;</span>__toggle </span><span class="token punctuation">{</span><br />        <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br />    <span class="token punctuation">}</span><br />    <span class="token comment">// ...</span><br /><span class="token punctuation">}</span></code></pre>
-<h2 id="markdown">Markdown<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#markdown" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="markdown" tabindex="-1">Markdown<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#markdown" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>Markdown files are compiled using <a href="https://github.com/markdown-it/markdown-it" target="_blank" rel="noopener noreferrer">markdown-it<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
@@ -144,7 +144,7 @@ The configurations for markdown-it and it’s plugins are located in the
 Note that Markdown documents must be wrapped in an element with class
 <code>.markdown</code> for the styles to take effect. You can thus use the Markdown styles
 in HTML/Nunjucks files by wrapping sections in such an element.</p>
-<h3 id="plugins">Plugins<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#plugins" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="plugins" tabindex="-1">Plugins<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#plugins" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>The following markdown-it plugins are used in this blog:</p>
 <ul>
@@ -158,11 +158,11 @@ in HTML/Nunjucks files by wrapping sections in such an element.</p>
 <p>Additionally, two custom plugins, one for the arrow icons after external links,
 and one for the anchor links when hovering over headings, are implemented in the
 config folder.</p>
-<h3 id="posts">Posts<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#posts" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="posts" tabindex="-1">Posts<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#posts" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>The blog supports several non-standard additions to Markdown, that add
 blog-specific functionality to your posts.</p>
-<h4 id="nunjucks-expressions">Nunjucks expressions<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#nunjucks-expressions" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h4 id="nunjucks-expressions" tabindex="-1">Nunjucks expressions<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#nunjucks-expressions" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h4><p>You can write Nunjucks markup directly in your markdown posts, just as you would
 in the other pages. Just wrap the expression between two curly braces:
@@ -173,7 +173,7 @@ the page’s code repository, directly in Markdown, like this:</p>
 <p>You can find the source code <a href="https://github.com/umcconnell/umcconnell.github.io" target="_blank" rel="noopener noreferrer">here<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
         </svg></a>.</p>
-<h4 id="shortcodes">Shortcodes<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#shortcodes" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h4 id="shortcodes" tabindex="-1">Shortcodes<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#shortcodes" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h4><p>Shortcodes are another very practical feature of Nunjucks in Markdown. All
 shortcodes are defined in
@@ -203,7 +203,7 @@ add more. Shortcodes expand to a longer parameterized expression.</p>
 <li><code>msg</code> for message boxes</li>
 <li><code>details</code> for an expandable HTML summary/details element</li>
 </ul>
-<h4 id="katex">KaTeX<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#katex" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h4 id="katex" tabindex="-1">KaTeX<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#katex" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h4><p>You can also include math expressions in your post. The expressions are compiled
 using <a href="https://katex.org/" target="_blank" rel="noopener noreferrer">KaTeX<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
@@ -229,7 +229,7 @@ For example, you can display Euler’s identity:</p>
 <a href="https://katex.org/docs/supported.html" target="_blank" rel="noopener noreferrer">KaTeX docs<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
         </svg></a>.</p>
-<h2 id="nunjucks">Nunjucks<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#nunjucks" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="nunjucks" tabindex="-1">Nunjucks<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#nunjucks" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p><a href="https://mozilla.github.io/nunjucks/" target="_blank" rel="noopener noreferrer">Nunjucks<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
@@ -277,7 +277,7 @@ The pages represent concrete pages of the website, such as the
 with Nunjucks, but already include front matter for 11ty.</p>
 </li>
 </ul>
-<h2 id="11ty">11ty<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#11ty" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="11ty" tabindex="-1">11ty<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#11ty" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>Most of the 11ty-related configuration is placed in the
 <a href="https://github.com/umcconnell/umcconnell.github.io/tree/main/.eleventy.js" target="_blank" rel="noopener noreferrer"><code>.eleventy.js</code><svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
@@ -291,7 +291,7 @@ configuration.</p>
 <p>In development mode (<code>npm run dev</code>), Markdown posts and images in the
 <code>src/posts/drafts/</code> folder will also be built and served. They do, however, not
 appear in production mode and are not tracked by git.</p>
-<h3 id="icons">Icons<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#icons" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="icons" tabindex="-1">Icons<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#icons" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>All icons placed in the
 <a href="https://github.com/umcconnell/umcconnell.github.io/tree/main/src/assets/icons/" target="_blank" rel="noopener noreferrer"><code>src/assets/icons/</code><svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
@@ -299,7 +299,7 @@ appear in production mode and are not tracked by git.</p>
         </svg></a> folder will be
 grouped into an SVG sprite to improve loading time. The icons can then be used
 via the <code>icon</code> <a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#shortcodes">shortcode</a>.</p>
-<h3 id="plugins-1">Plugins<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#plugins-1" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="plugins-1" tabindex="-1">Plugins<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#plugins-1" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>The 11ty plugins used in this blog are:</p>
 <ul>
@@ -317,7 +317,7 @@ via the <code>icon</code> <a href="https://umcconnell.github.io/posts/2021-03-31
 <a href="https://www.11ty.dev/docs/plugins/" target="_blank" rel="noopener noreferrer">11ty docs<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
         </svg></a></p>
-<h2 id="webpack-babel">Webpack &amp; Babel<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#webpack-babel" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="webpack-babel" tabindex="-1">Webpack &amp; Babel<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#webpack-babel" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>All JavaScript code referenced in
 <a href="https://github.com/umcconnell/umcconnell.github.io/tree/main/src/assets/scripts/main.js" target="_blank" rel="noopener noreferrer"><code>src/assets/scripts/main.js</code><svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
@@ -336,7 +336,7 @@ the webpack configuration file located at
         </svg></a>.
 The bundling process uses an in-memory file system to bundle the scripts in
 memory and return the bundled result as a reusable JS string.</p>
-<h2 id="github">Github<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#github" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="github" tabindex="-1">Github<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#github" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>The site is automatically built and linted using the provided Github Actions
 workflows. The workflow files are located in the
@@ -346,7 +346,7 @@ workflows. The workflow files are located in the
 <p>The lint action uses Prettier to check the code for styling and formatting
 issues. See the <a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#vscode">VSCode</a> section for information on the Prettier
 extension to automatically format your code when you save.</p>
-<h2 id="vscode">VSCode<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#vscode" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="vscode" tabindex="-1">VSCode<a href="https://umcconnell.github.io/posts/2021-03-31-meta-blog-advanced/#vscode" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>For VSCode users, I recommend installing the
 <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="noopener noreferrer">Prettier extension<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
@@ -383,7 +383,7 @@ goes further into the technical details of the blog.</p>
 <a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#video-tutorial">video tutorial</a> available for a visual guide on the setup
 process.</p>
 </div>
-<h2 id="static-site">Static Site<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#static-site" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="static-site" tabindex="-1">Static Site<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#static-site" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>Before we dive into building a static website, it is helpful to quickly look at
 what a static website actually is.</p>
@@ -408,7 +408,7 @@ you have is static content. Static sites are…</p>
 a site consisting of only text and images. There are <em>a lot</em> of possibilities on
 the front-end, ranging from embedded YouTube videos and RSS feeds to a
 comment system (more on this later on and in Part 2).</p>
-<h2 id="ssgs">SSGs<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#ssgs" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="ssgs" tabindex="-1">SSGs<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#ssgs" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>When creating your static blog, it can be helpful to use a Static Site Generator
 (<em>SSG</em>). An SSG helps to make the development and editing process comfortable.
@@ -426,9 +426,9 @@ will be referred to as <em>building</em> in the following.</p>
         <use xlink:href="#icon-link-external"></use>
         </svg></a>, which allows you to benefit from the massive
 JavaScript ecosystem and write your own plugins in JavaScript.</p>
-<h2 id="getting-started">Getting started<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#getting-started" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="getting-started" tabindex="-1">Getting started<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#getting-started" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
-        </svg></a></h2><h3 id="prerequisites">Prerequisites<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#prerequisites" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+        </svg></a></h2><h3 id="prerequisites" tabindex="-1">Prerequisites<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#prerequisites" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>Before we get started with the setup, make sure you have the following
 prerequisites:</p>
@@ -444,17 +444,17 @@ prerequisites:</p>
         <use xlink:href="#icon-link-external"></use>
         </svg></a></li>
 </ul>
-<h3 id="cloning">Cloning<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#cloning" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="cloning" tabindex="-1">Cloning<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#cloning" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>Start by cloning my blog from the Github repository. In a terminal, run:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/umcconnell/umcconnell.github.io.git blog<br /><span class="token builtin class-name">cd</span> blog/</code></pre>
 <p>This will clone the code into the folder <code>blog/</code>.</p>
-<h3 id="installing">Installing<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#installing" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="installing" tabindex="-1">Installing<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#installing" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>In the blog root folder, install the required dependencies using npm:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span></code></pre>
 <p>The installation might take a minute or two.</p>
-<h3 id="running">Running<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#running" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="running" tabindex="-1">Running<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#running" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>Once the installation has finished, you are ready to run the build process and
 serve the blog on your localhost. Run:</p>
@@ -463,7 +463,7 @@ serve the blog on your localhost. Run:</p>
         <use xlink:href="#icon-link-external"></use>
         </svg></a> and
 see the blog as it appears here.</p>
-<h2 id="personalizing">Personalizing<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#personalizing" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="personalizing" tabindex="-1">Personalizing<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#personalizing" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>Now the blog is ready for customization. To do that, you will need to change
 four files:</p>
@@ -473,7 +473,7 @@ four files:</p>
 <li><a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#srcsitewebmanifest"><code>src/site.webmanifest</code></a></li>
 <li><a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#srcdatametajson"><code>src/data/meta.json</code></a></li>
 </ul>
-<h3 id="packagejson">package.json<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#packagejson" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="packagejson" tabindex="-1">package.json<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#packagejson" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>The <code>package.json</code> file describes your node project. It mainly contains
 information about the project’s source code and package dependencies.</p>
@@ -483,17 +483,17 @@ to your liking.</p>
 source code repository. The project name should be <code>GH_USERNAME.github.io</code>, the
 repository url <code>http://github.com/GH_USERNAME/GH_USERNAME.github.io</code>
 accordingly. Replace <code>GH_USERNAME</code> with your Github username.</p>
-<h3 id="license">LICENSE<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#license" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="license" tabindex="-1">LICENSE<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#license" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>Modify the <code>LICENSE</code> file to mention your name as the Copyright owner in the
 first line.</p>
-<h3 id="srcsitewebmanifest">src/site.webmanifest<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#srcsitewebmanifest" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="srcsitewebmanifest" tabindex="-1">src/site.webmanifest<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#srcsitewebmanifest" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>The <code>src/site.webmanifest</code> file describes the web app behavior of your blog.
 This controls how the website will be presented when a user adds the blog to
 their home screen, i.e. installing the web app.</p>
 <p>Here, you can change the <code>name</code> and <code>short_name</code> field.</p>
-<h3 id="srcdatametajson">src/data/meta.json<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#srcdatametajson" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="srcdatametajson" tabindex="-1">src/data/meta.json<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#srcdatametajson" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>Finally, the last file to personalize is <code>src/data/meta.json</code>. This file
 contains important meta-information about the blog, such as the author, the
@@ -530,7 +530,7 @@ later.</p>
 </ul>
 <p>Once you’ve saved the files, you should be able to see your name appear on the
 blog.</p>
-<h3 id="icons">Icons<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#icons" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="icons" tabindex="-1">Icons<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#icons" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>To change the icons that appear in the header, when installing the web app,
 etc., navigate to <code>src/assets/images/</code>.</p>
@@ -540,7 +540,7 @@ image, which is displayed in the about page as your contact information.</p>
 <p>The icons used for the web app are located in the <code>favicon/</code> subfolder. When
 replacing these icons with your own, custom icons, make sure to keep the naming
 and size of the individual files.</p>
-<h3 id="colors">Colors<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#colors" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="colors" tabindex="-1">Colors<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#colors" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>If you want, you can further personalize the blog with custom colors, styles,
 and more. All styles and related configurations are located in the
@@ -553,7 +553,7 @@ means you can style the blog in plain CSS if that is more familiar to you.</p>
 <code>utils/_variables.scss</code> file. The main theme color is defined by the
 <code>$brand-color-primary</code> variable.These variables are used in all the other
 styles, which means it should be enough to change the colors in this file.</p>
-<h3 id="comments">Comments<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#comments" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="comments" tabindex="-1">Comments<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#comments" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>The last thing to do personalize your new blog is to activate the comments
 functionality. The blog uses a free service called
@@ -575,7 +575,7 @@ repositories. You can later restrict access to the comments repo only in your
 <a href="https://github.com/settings/installations" target="_blank" rel="noopener noreferrer">settings<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
         </svg></a>.</p>
-<h2 id="first-post">First post<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#first-post" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="first-post" tabindex="-1">First post<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#first-post" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>Your new blog should probably contain a introductory post. All posts are written
 in Markdown and located in <code>src/posts/</code>.</p>
@@ -587,19 +587,19 @@ Changes you make to the file should be reflected instantaneously in your web
 browser.</p>
 <pre class="language-md"><code class="language-md"><span class="token front-matter-block"><span class="token punctuation">---</span><br /><span class="token font-matter yaml language-yaml">title: Hello World<br />date: 2021-03-14<br />description: ><br />    Hello World introductory post.<br />tags:<br />    - hello<br />    - world<br />    - intro</span><br /><span class="token punctuation">---</span></span><br /><br />Hi everyone!<br /><br />This is my <span class="token italic"><span class="token punctuation">_</span><span class="token content">brand new</span><span class="token punctuation">_</span></span> blog. <span class="token bold"><span class="token punctuation">**</span><span class="token content">Enjoy</span><span class="token punctuation">**</span></span>!</code></pre>
 <p>That’s it! You’re blog is ready to go online.</p>
-<h2 id="publishing">Publishing<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#publishing" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="publishing" tabindex="-1">Publishing<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#publishing" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>After customizing the blog, we are now ready to publish our blog. We will
 publish the blog on <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Github pages<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
         </svg></a>. After following
 these steps, your page will be available at <code>https://GH_USERNAME.github.io</code>.</p>
-<h3 id="committing">Committing<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#committing" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="committing" tabindex="-1">Committing<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#committing" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>Start by committing all your customization changes to git. In the root folder
 of the blog, run:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span><br /><span class="token function">git</span> commit -av</code></pre>
-<h3 id="creating-repositories">Creating Repositories<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#creating-repositories" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="creating-repositories" tabindex="-1">Creating Repositories<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#creating-repositories" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>Next, we’ll create the Git repositories that will hold the source code of your
 blog and the comments to your posts.</p>
@@ -620,7 +620,7 @@ command. Because you have cloned the original blog code from Github, it already
 has a remote git origin set. You will need to use <code>set-url</code> instead of <code>add</code>
 here:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin https://github.com/GH_USERNAME/GH_USERNAME.github.io.git<br /><span class="token function">git</span> branch -M main<br /><span class="token function">git</span> push -u origin main</code></pre>
-<h3 id="github-pages">Github Pages<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#github-pages" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="github-pages" tabindex="-1">Github Pages<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#github-pages" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><p>The last step is to publish your pages using Github pages. In your repository
 containing the blog source, navigate to the “Settings” tab. Almost at the
@@ -628,7 +628,7 @@ bottom of the page, you should find a “Github pages section”.</p>
 <p><img src="https://umcconnell.github.io/assets/images/posts/meta-blog/github-pages-publish.png" alt="Github Pages section in the repository settings" /></p>
 <p>From the source drop-down, select the “gh-pages” branch. After hitting the save
 button, your site should be available online.</p>
-<h2 id="video-tutorial">Video tutorial<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#video-tutorial" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="video-tutorial" tabindex="-1">Video tutorial<a href="https://umcconnell.github.io/posts/2021-03-30-meta-blog-basics/#video-tutorial" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>My friend Boldizsar Zopcsak and I recorded a video tutorial about this whole
 procedure a little while ago. The video goes through the basics of cloning,
@@ -667,7 +667,7 @@ formula, <em>n</em> represents a given position in the sequence starting with <e
     fib(n-2)+fib(n-1) &amp;\text{if } n \gt 1
 \end{cases}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">b</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">b</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">b</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord">if </span></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord text"><span class="mord">if </span></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-<h2 id="implementation">Implementation<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#implementation" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="implementation" tabindex="-1">Implementation<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#implementation" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>We will be implementing the Fibonacci logic using Rust. Rust is a programming
 language initially developed at Mozilla that can guarantee memory safety, while
@@ -684,7 +684,7 @@ OS, on the Rust homepage:
         <use xlink:href="#icon-link-external"></use>
         </svg></a> without having to install
 anything!</p>
-<h3 id="setup">Setup<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#setup" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h3 id="setup" tabindex="-1">Setup<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#setup" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h3><div class="msg msg--info">
 <p>If you are not coding along on your machine, feel free to skip this section.</p>
@@ -715,7 +715,7 @@ something like this:</p>
 └── src
     └── lib.rs
 </code></pre>
-<h2 id="1-standard">#1: Standard<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#1-standard" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="1-standard" tabindex="-1">#1: Standard<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#1-standard" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><div class="msg msg--info">
         <div class="msg__header">INFO</div>
@@ -734,7 +734,7 @@ files. This will be useful when benchmarking the functions later on.</p>
 or change their values. In Rust, all variables are <em>imutable</em> by default.</p>
 <p>We start our loop at <code>1</code>, because the first two values are already defined and
 the range is non-inclusive for its end.</p>
-<h2 id="2-recursion">#2: Recursion<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#2-recursion" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="2-recursion" tabindex="-1">#2: Recursion<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#2-recursion" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>Another approach to implementing the Fibonacci algorithm would be to just
 translate the recursive mathematical definition from the introduction into Rust
@@ -815,7 +815,7 @@ The asymptotically tight bound on the running time of <code>fib_recursive</code>
         <use xlink:href="#icon-link-external"></use>
         </svg></a>.</p>
 </div>
-<h2 id="3-memoization">#3: Memoization<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#3-memoization" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="3-memoization" tabindex="-1">#3: Memoization<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#3-memoization" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>We will use a
 <a href="https://doc.rust-lang.org/std/collections/struct.HashMap.html" target="_blank" rel="noopener noreferrer">std::collections::HashMap<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
@@ -838,7 +838,7 @@ program. By declaring the memo as <em>mutable</em>, Rust ensures that only one p
 the program has write access at a time and that no other part of the program can
 read from the memo while we have write access to it and might be modifying it
 unexpectedly.</p>
-<h2 id="4-iterator">#4: Iterator<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#4-iterator" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="4-iterator" tabindex="-1">#4: Iterator<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#4-iterator" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>One last way to implement the Fibonacci sequence that this post will cover is
 using Rust iterators. You might be familiar with this concept, especially if
@@ -890,7 +890,7 @@ compiling the code, Rust will optimize the operations away and turn the
 iterators into classical for loops in the background. That means you don’t have
 to choose between writing fast and clean code, you can do both!</p>
 </div>
-<h2 id="bechmarking">Bechmarking<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#bechmarking" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="bechmarking" tabindex="-1">Bechmarking<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#bechmarking" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>Finally, we will compare the different approaches by benchmarking the different
 functions. Add the following code to the <code>benches/fibonacci_benchmark.rs</code> file.
@@ -913,7 +913,7 @@ execution of the iterator takes <code>~34ns</code> for both inputs, the standard
 around <code>~4.5ns</code> for both inputs.</p>
 <p>You can find more detailed graphs and charts for every function in the
 corresponding <code>target/criterion/Fibonacci/&lt;APPROACH&gt;/report/index.html</code> folder.</p>
-<h2 id="conclusion">Conclusion<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#conclusion" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="conclusion" tabindex="-1">Conclusion<a href="https://umcconnell.github.io/posts/2021-03-13-fibonacci-rust/#conclusion" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>We’ve implemented and benchmarked four different approaches to generating the
 Fibonacci sequence.</p>
@@ -950,7 +950,7 @@ software-related topics. My goal is to write about current software side
 projects and things I’ve learned, all in the spirit of
 “Stay curious, keep learning”. Depending on how that works out, I’ll adapt if
 needed.</p>
-<h2 id="outlook">Outlook<a href="https://umcconnell.github.io/posts/2021-03-11-hello-internet/#outlook" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="outlook" tabindex="-1">Outlook<a href="https://umcconnell.github.io/posts/2021-03-11-hello-internet/#outlook" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>A few topics I’d like to cover soon are AI, Rust and how I set up this blog, to
 give some ideas in case you would like to do the same. In the meantime, as this
@@ -959,7 +959,7 @@ blog is entirely open source, I invite you to check out the
         <use xlink:href="#icon-link-external"></use>
         </svg></a> on Github,
 fork it, make it your own, or whatever you want.</p>
-<h2 id="why">Why?!?<a href="https://umcconnell.github.io/posts/2021-03-11-hello-internet/#why" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
+<h2 id="why" tabindex="-1">Why?!?<a href="https://umcconnell.github.io/posts/2021-03-11-hello-internet/#why" class="anchor-link"><svg class="icon icon--link" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link"></use>
         </svg></a></h2><p>I hope to learn something useful from this experience and gain some more
 experience building websites. Writing down ideas and summarizing problems is a
