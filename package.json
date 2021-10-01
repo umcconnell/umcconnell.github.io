@@ -40,7 +40,7 @@
         "memfs": "^3.3.0",
         "node-sass": "^6.0.1",
         "npm-run-all": "^4.1.5",
-        "svg-sprite": "^1.5.2",
+        "svg-sprite": "^1.5.3",
         "webpack": "^5.55.1"
     },
     "devDependencies": {
