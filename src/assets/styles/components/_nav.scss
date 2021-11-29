@@ -36,6 +36,13 @@
         &.is-open &__menu {
             display: block;
             animation: animation-fadeIn 0.2s;
+
+            & .nav__link {
+                padding: 1rem 0;
+                animation: animation-slideFadeIn 0.15s ease-out;
+                animation-fill-mode: both;
+                animation-delay: calc(var(--index) * 50ms);
+            }
         }
     }
 
