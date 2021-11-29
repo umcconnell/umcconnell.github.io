@@ -32,6 +32,11 @@ module.exports = {
         return arr.slice(0, amount)
     },
 
+    enumerate: function (arr) {
+        console.log('Enumerating', arr[0])
+        return arr.map((val, i) => [val, i])
+    },
+
     sourceRepo: function (path) {
         return `${this.ctx.meta.code.repo}/tree/${this.ctx.meta.code.branch}/${path}`
     }
