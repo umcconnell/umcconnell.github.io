@@ -37,8 +37,16 @@
                 href="https://github.com/maxboeck/eleventastic"
                 target="_blank"
             >eleventastic</a> template.
-            </p>
-            <!--<p>Legal | Privacy Policy</p>-->
+        </p>
+        <p>
+            Commit #<a
+                rel="noopener noreferrer"
+                href="{{ meta.code.repo }}/commit/{{ build.gitCommitHash }}"
+                target="_blank"
+            >{{ build.gitCommitHashShort }}</a>
+            (<a href="/build.txt">Build info</a>)
+        </p>
+        <!--<p>Legal | Privacy Policy</p>-->
         </div>
 
         <div class="footer__right">

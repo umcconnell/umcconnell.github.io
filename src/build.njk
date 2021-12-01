@@ -3,4 +3,5 @@ permalink: build.txt
 eleventyExcludeFromCollections: true
 ---
 LAST BUILD: {{ build.timestamp | dateToISO }} 
-ENV:        {{ build.env}}
+COMMIT:     {{ build.gitCommitHash }}
+ENV:        {{ build.env }}
