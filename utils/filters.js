@@ -33,7 +33,6 @@ module.exports = {
     },
 
     enumerate: function (arr) {
-        console.log('Enumerating', arr[0])
         return arr.map((val, i) => [val, i])
     },
 
