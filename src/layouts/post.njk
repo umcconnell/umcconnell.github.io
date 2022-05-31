@@ -11,8 +11,8 @@
 <article class="container post">
     <header class="post__heading">
         <h1 class="post__title">{{ title }}</h1>
-        {{ taglist.taglist(tags, "post__tags") }}
         <em class="post__date">Published on {{ date | dateLong }}</em>
+        {{ taglist.taglist(tags, "post__tags") }}
         <p class="post__description">{{description}}</p>
     </header>
 

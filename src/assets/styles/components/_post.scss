@@ -2,6 +2,11 @@
     & .post__heading {
         margin-bottom: $spacing-y;
 
+        & .post__date {
+            display: inline-block;
+            margin-top: 2 * $spacing-y-small;
+        }
+
         & .post__tags .taglist__tag {
             margin-top: 2 * $spacing-y-small;
             margin-bottom: $spacing-y-small;
@@ -9,7 +14,7 @@
 
         & .post__description {
             font-style: italic;
-            margin-top: $spacing-y;
+            margin-top: 1rem;
         }
     }
 
