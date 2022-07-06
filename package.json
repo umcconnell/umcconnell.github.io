@@ -45,7 +45,7 @@
     },
     "devDependencies": {
         "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
-        "@11ty/eleventy-plugin-rss": "^1.1.2",
+        "@11ty/eleventy-plugin-rss": "^1.2.0",
         "@11ty/eleventy-navigation": "^0.3.3",
         "cross-env": "^7.0.3",
         "prettier": "2.7.1"
