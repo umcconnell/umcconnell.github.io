@@ -23,7 +23,7 @@ module.exports = {
     },
 
     critical: async function (content, outputPath) {
-        const critical = await import('critical');
+        const critical = await import('critical')
 
         if (shouldTransformHTML(outputPath) && isHomePage(outputPath)) {
             try {
