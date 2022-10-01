@@ -1,5 +1,5 @@
 const htmlmin = require('html-minifier')
-const critical = require('critical')
+// const critical = require('critical')
 const buildDir = 'dist'
 
 const shouldTransformHTML = (outputPath) =>
@@ -23,6 +23,8 @@ module.exports = {
     },
 
     critical: async function (content, outputPath) {
+        const critical = await import('critical');
+
         if (shouldTransformHTML(outputPath) && isHomePage(outputPath)) {
             try {
                 const config = {
