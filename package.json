@@ -35,7 +35,7 @@
         "html-minifier": "^4.0.0",
         "luxon": "^3.2.1",
         "markdown-it": "^13.0.1",
-        "markdown-it-anchor": "^8.6.6",
+        "markdown-it-anchor": "^8.6.7",
         "markdown-it-footnote": "^3.0.3",
         "memfs": "^3.4.13",
         "node-sass": "^8.0.0",
