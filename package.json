@@ -30,7 +30,7 @@
         "critical": "^5.1.1",
         "cssesc": "^3.0.0",
         "del-cli": "^5.0.0",
-        "focus-trap": "^7.4.3",
+        "focus-trap": "^7.5.2",
         "focus-visible": "^5.2.0",
         "html-minifier": "^4.0.0",
         "luxon": "^3.3.0",
