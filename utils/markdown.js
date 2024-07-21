@@ -1,4 +1,4 @@
-module.exports.slugify = function (str) {
+export function slugify(str) {
     return str
         .toString()
         .toLowerCase()

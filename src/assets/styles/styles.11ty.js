@@ -1,17 +1,17 @@
-const fs = require('fs')
-const path = require('path')
-const sass = require('node-sass')
-const CleanCSS = require('clean-css')
-const cssesc = require('cssesc')
+import fs from 'fs'
+import { join } from 'path'
+import { render as _render } from 'node-sass'
+import CleanCSS from 'clean-css'
+import cssesc from 'cssesc'
 
 const isProd = process.env.ELEVENTY_ENV === 'production'
 
 // main entry point name
 const ENTRY_FILE_NAME = 'main.scss'
 
-module.exports = class {
+export default class {
     async data() {
-        const entryPath = path.join(__dirname, `/${ENTRY_FILE_NAME}`)
+        const entryPath = join(import.meta.dirname, `/${ENTRY_FILE_NAME}`)
         return {
             permalink: `/assets/styles/main.css`,
             eleventyExcludeFromCollections: true,
@@ -28,7 +28,7 @@ module.exports = class {
                 config.sourceMapEmbed = true
                 config.outputStyle = 'expanded'
             }
-            return sass.render(config, (err, result) => {
+            return _render(config, (err, result) => {
                 if (err) {
                     return reject(err)
                 }

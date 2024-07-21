@@ -1,6 +1,6 @@
-const { shortcodes } = require('../../utils/shortcodes.js')
+import { shortcodes } from '../../utils/shortcodes.js'
 
-module.exports = function externalLinks(
+export default function externalLinks(
     md,
     { icon = shortcodes.icon('link-external') } = {}
 ) {

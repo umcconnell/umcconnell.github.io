@@ -2,5 +2,5 @@
 import 'focus-visible'
 
 // Internal Modules
-import './modules/nav'
-import './modules/easteregg'
+import './modules/nav.js'
+import './modules/easteregg.js'

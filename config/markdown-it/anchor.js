@@ -1,8 +1,8 @@
-const anchor = require('markdown-it-anchor')
-const { slugify } = require('../../utils/markdown')
+import anchor from 'markdown-it-anchor'
+import { slugify } from '../../utils/markdown.js'
 
 const config = { slugify }
 
-module.exports = function anchorPlugin(md) {
+export default function anchorPlugin(md) {
     md.use(anchor, config)
 }

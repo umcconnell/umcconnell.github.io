@@ -1,15 +1,15 @@
-const pluginRss = require('@11ty/eleventy-plugin-rss')
-const pluginNavigation = require('@11ty/eleventy-navigation')
-const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+import pluginRss from '@11ty/eleventy-plugin-rss'
+import pluginNavigation from '@11ty/eleventy-navigation'
+import pluginSyntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
 
-const markdownIt = require('./config/markdown-it')
+import markdownIt from './config/markdown-it.js'
 
-const filters = require('./utils/filters.js')
-const transforms = require('./utils/transforms.js')
-const { shortcodes, pairedShortcodes } = require('./utils/shortcodes.js')
-const iconsprite = require('./utils/iconsprite.js')
+import * as filters from './utils/filters.js'
+import * as transforms from './utils/transforms.js'
+import { shortcodes, pairedShortcodes } from './utils/shortcodes.js'
+import iconsprite from './utils/iconsprite.js'
 
-module.exports = function (config) {
+export default function (config) {
     // Plugins
     config.addPlugin(pluginRss)
     config.addPlugin(pluginNavigation)

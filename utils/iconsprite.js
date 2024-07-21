@@ -1,11 +1,11 @@
-const fs = require('fs')
-const path = require('path')
-const util = require('util')
-const glob = require('glob')
-const File = require('vinyl')
-const SVGSpriter = require('svg-sprite')
+import { readFileSync } from 'fs'
+import { resolve as _resolve, join } from 'path'
+import { promisify } from 'util'
+import glob from 'glob'
+import File from 'vinyl'
+import SVGSpriter from 'svg-sprite'
 
-const cwd = path.resolve('src/assets/icons')
+const cwd = _resolve('src/assets/icons')
 const spriteConfig = {
     mode: {
         inline: true,
@@ -26,7 +26,7 @@ const spriteConfig = {
     }
 }
 
-module.exports = async () => {
+export default async () => {
     // Make a new SVGSpriter instance w/ configuration
     const spriter = new SVGSpriter(spriteConfig)
 
@@ -43,16 +43,16 @@ module.exports = async () => {
     }
 
     // Get all SVG icon files in working directory
-    const getFiles = util.promisify(glob)
+    const getFiles = promisify(glob)
     const files = await getFiles('**/*.svg', { cwd: cwd })
 
     // Add them all to the spriter
     files.forEach(function (file) {
         spriter.add(
             new File({
-                path: path.join(cwd, file),
+                path: join(cwd, file),
                 base: cwd,
-                contents: fs.readFileSync(path.join(cwd, file))
+                contents: readFileSync(join(cwd, file))
             })
         )
     })

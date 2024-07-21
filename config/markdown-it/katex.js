@@ -1,4 +1,4 @@
-const katex = require('@iktakahiro/markdown-it-katex')
+import katex from '@iktakahiro/markdown-it-katex'
 
 const macros = {
     '\\f': '#1f(#2)'
@@ -16,6 +16,6 @@ const config = {
     macros
 }
 
-module.exports = function katexPlugin(md) {
+export default function katexPlugin(md) {
     md.use(katex, config)
 }

@@ -1,12 +1,12 @@
-const markdownIt = require('markdown-it')
+import markdownIt from 'markdown-it'
 
-const katex = require('./markdown-it/katex')
-const anchor = require('./markdown-it/anchor')
-const footnote = require('./markdown-it/footnote')
-const toc = require('./markdown-it/toc')
+import katex from './markdown-it/katex.js'
+import anchor from './markdown-it/anchor.js'
+import footnote from './markdown-it/footnote.js'
+import toc from './markdown-it/toc.js'
 
-let externalLinks = require('./markdown-it/external-link')
-let anchorLink = require('./markdown-it/anchor-link')
+import externalLinks from './markdown-it/external-link.js'
+import anchorLink from './markdown-it/anchor-link.js'
 
 const config = {
     html: true,
@@ -23,4 +23,4 @@ const md = markdownIt(config)
     .use(anchorLink)
     .use(toc)
 
-module.exports = md
+export default md

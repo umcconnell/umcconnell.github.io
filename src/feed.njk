@@ -12,7 +12,7 @@ eleventyExcludeFromCollections: true
         <name>{{ meta.title }}</name>
     </author>
     {% if collections.posts %}
-    <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
+    <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
     {% endif %}
     <id>{{ meta.url }}/</id>
     {%- for post in collections.posts | reverse -%}
@@ -20,7 +20,7 @@ eleventyExcludeFromCollections: true
         <entry>
             <title>{{ post.data.title }}</title>
             <link href="{{ absolutePostUrl }}"/>
-            <updated>{{ post.date | rssDate }}</updated>
+            <updated>{{ post.date | dateToRfc3339 }}</updated>
             <id>{{ absolutePostUrl }}</id>
             <content type="html"><![CDATA[
                 {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}

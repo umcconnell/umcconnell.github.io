@@ -1,18 +1,18 @@
-const fs = require('fs')
-const path = require('path')
-const webpack = require('webpack')
-const { fs: mfs } = require('memfs')
+import fs from 'fs'
+import { join, resolve as _resolve } from 'path'
+import webpack from 'webpack'
+import { fs as mfs } from 'memfs'
 
 const isProd = process.env.ELEVENTY_ENV === 'production'
 
 // main entry point name
 const ENTRY_FILE_NAME = 'main.js'
 
-module.exports = class {
+export default class {
     // Configure Webpack in Here
     async data() {
-        const entryPath = path.join(__dirname, `/${ENTRY_FILE_NAME}`)
-        const outputPath = path.resolve(__dirname, '../../memory-fs/js/')
+        const entryPath = join(import.meta.dirname, `/${ENTRY_FILE_NAME}`)
+        const outputPath = _resolve(import.meta.dirname, '../../memory-fs/js/')
 
         // Transform .js files, run through Babel
         const rules = [

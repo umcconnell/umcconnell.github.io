@@ -1,16 +1,14 @@
-const { execSync } = require('child_process')
+import { execSync } from 'child_process'
 
 function getCurrentCommit(short = false) {
     return execSync(`git rev-parse ${short ? '--short' : ''} HEAD`, {
-        cwd: __dirname
+        cwd: import.meta.dirname
     })
         .toString()
         .trim()
 }
 
-module.exports = {
-    env: process.env.ELEVENTY_ENV,
-    timestamp: new Date(),
-    gitCommitHash: getCurrentCommit(),
-    gitCommitHashShort: getCurrentCommit(true)
-}
+export const env = process.env.ELEVENTY_ENV
+export const timestamp = new Date()
+export const gitCommitHash = getCurrentCommit()
+export const gitCommitHashShort = getCurrentCommit(true)

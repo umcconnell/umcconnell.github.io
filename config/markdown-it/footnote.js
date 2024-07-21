@@ -1,6 +1,6 @@
-const footnote = require('markdown-it-footnote')
+import footnote from 'markdown-it-footnote'
 
-module.exports = function footnotePlugin(md) {
+export default function footnotePlugin(md) {
     md.use(footnote)
 
     md.renderer.rules.footnote_block_open = function () {

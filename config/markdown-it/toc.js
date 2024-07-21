@@ -1,7 +1,7 @@
-const toc = require('markdown-it-table-of-contents')
-const { slugify } = require('../../utils/markdown')
+import toc from 'markdown-it-table-of-contents'
+import { slugify } from '../../utils/markdown.js'
 
-module.exports = function tocPlugin(md) {
+export default function tocPlugin(md) {
     md.use(toc, {
         includeLevel: [1, 2, 3],
         containerClass: 'table-of-contents',
