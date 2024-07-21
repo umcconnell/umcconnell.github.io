@@ -11,9 +11,10 @@
 }
 
 .sr-skip-link {
+    font-family: $font-family-sans-serif;
+
     @include sr-only();
     @include sr-only-focusable();
-    font-family: $font-family-sans-serif;
 
     &:focus {
         position: absolute;

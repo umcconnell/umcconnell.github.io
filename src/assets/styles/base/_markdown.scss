@@ -51,9 +51,10 @@
 // Links
 //------
 .markdown a {
-    @include t(color, 'link-color');
     background-color: initial;
     text-decoration: none;
+
+    @include t(color, 'link-color');
 }
 
 .markdown a:active,
@@ -429,8 +430,9 @@
 }
 
 .markdown table tr {
-    @include t(background-color, 'bg-color');
     border-top: 1px solid #c6cbd1;
+
+    @include t(background-color, 'bg-color');
 }
 
 .markdown table tr:nth-child(2n) {
@@ -444,12 +446,13 @@
     padding: 0.2em 0.4em;
     margin: 0;
     font-size: 85%;
+    border-radius: 3px;
+
     @include t(
         background-color,
         'gray-light',
         $transform: 'transparentize-strong'
     );
-    border-radius: 3px;
 }
 
 .markdown pre {
@@ -471,8 +474,9 @@
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    @include t(background-color, 'gray-lightest');
     border-radius: 3px;
+
+    @include t(background-color, 'gray-lightest');
 }
 
 .markdown pre code {

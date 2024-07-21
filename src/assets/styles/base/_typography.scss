@@ -34,8 +34,8 @@ p {
 }
 
 a {
-    @include t(color, 'link-color');
     text-decoration: underline;
+    @include t(color, 'link-color');
 }
 
 .lead {

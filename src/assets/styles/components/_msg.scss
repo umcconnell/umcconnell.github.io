@@ -1,9 +1,10 @@
 .msg {
-    @include t(background-color, 'gray-lightest');
     padding: 1rem;
     margin: 0.5rem 0;
     border-left: 6px solid #ddd;
     border-radius: $border-radius;
+
+    @include t(background-color, 'gray-lightest');
 
     @include mq('lg') {
         padding-left: 1.5rem;

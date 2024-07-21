@@ -79,12 +79,11 @@ body {
     font-family: $font-family-base;
     font-size: $font-size-base;
     line-height: $line-height;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 
     @include t(color, 'text-color');
     @include t(background-color, 'bg-color');
-
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
 }
 
 //

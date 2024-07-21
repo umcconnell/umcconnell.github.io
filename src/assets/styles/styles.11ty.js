@@ -1,6 +1,6 @@
 import fs from 'fs'
 import { join } from 'path'
-import { render as _render } from 'node-sass'
+import { compile } from 'sass'
 import CleanCSS from 'clean-css'
 import cssesc from 'cssesc'
 
@@ -24,16 +24,20 @@ export default class {
     async compile(config) {
         return new Promise((resolve, reject) => {
             if (!isProd) {
+                // TODO: Include sourceMappingURL manually
                 config.sourceMap = true
-                config.sourceMapEmbed = true
-                config.outputStyle = 'expanded'
+                config.sourceMapIncludeSources = true
+                config.style = 'expanded'
             }
-            return _render(config, (err, result) => {
-                if (err) {
-                    return reject(err)
-                }
-                resolve(result.css.toString())
-            })
+
+            try {
+                // Source map to be included here.
+                // See: https://sass-lang.com/documentation/js-api/interfaces/compileresult/
+                let result = compile(config.file, config)
+                resolve(result.css)
+            } catch (err) {
+                reject(err)
+            }
         })
     }
 
@@ -45,7 +49,7 @@ export default class {
             }
             const minified = new CleanCSS().minify(css)
             if (!minified.styles) {
-                return reject(minified.error)
+                return reject(minified.errors)
             }
             resolve(minified.styles)
         })

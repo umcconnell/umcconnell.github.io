@@ -28,10 +28,10 @@
     }
 
     &__right {
+        margin-bottom: 1rem;
+
         & a:not(:last-child) {
             margin-right: 0.5rem;
         }
-
-        margin-bottom: 1rem;
     }
 }

@@ -1,8 +1,10 @@
+@use 'sass:math';
+
 .pagination {
     text-align: center;
     & li {
         display: inline-block;
-        margin: 0 $spacing-x / 2;
+        margin: 0 math.div($spacing-x, 2);
     }
 
     & [aria-current] {
