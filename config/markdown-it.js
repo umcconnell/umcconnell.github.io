@@ -3,6 +3,7 @@ const markdownIt = require('markdown-it')
 const katex = require('./markdown-it/katex')
 const anchor = require('./markdown-it/anchor')
 const footnote = require('./markdown-it/footnote')
+const toc = require('./markdown-it/toc')
 
 let externalLinks = require('./markdown-it/external-link')
 let anchorLink = require('./markdown-it/anchor-link')
@@ -20,5 +21,6 @@ const md = markdownIt(config)
     .use(anchor)
     .use(externalLinks)
     .use(anchorLink)
+    .use(toc)
 
 module.exports = md
