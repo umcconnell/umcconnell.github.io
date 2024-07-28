@@ -21,7 +21,7 @@ export const card = (title, link, description, cssClass = '') =>
         <h2 class="card__title">
             <a href="${link}">${title}</a>
         </h2>
-        <p class="card__description">${htmlEscape(description)}</p>
+        <p class="card__description">${description}</p>
     </div>`
 
 /* {% macro taglist(list, class="", start=1) %}
@@ -36,6 +36,6 @@ export const postcard = (url, title, date, description, tags, cssClass = '') =>
     `<div class="card card--post ${cssClass}">
         <h2 class="card__title"><a href="${url}">${title}</a></h2>
         <strong class="card--post__date">${date}</strong>
-        <p class="card__description">${htmlEscape(description)}</p>
+        <p class="card__description">${description}</p>
         ${taglist(tags, 'card--post__taglist')}
     </div>`
