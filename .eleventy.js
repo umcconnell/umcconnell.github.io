@@ -1,3 +1,5 @@
+import fs from 'fs'
+
 import pluginRss from '@11ty/eleventy-plugin-rss'
 import pluginNavigation from '@11ty/eleventy-navigation'
 import pluginSyntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight'
@@ -9,7 +11,7 @@ import * as transforms from './utils/transforms.js'
 import { shortcodes, pairedShortcodes } from './utils/shortcodes.js'
 import iconsprite from './utils/iconsprite.js'
 
-export default function (config) {
+export default async function (config) {
     // Plugins
     config.addPlugin(pluginRss)
     config.addPlugin(pluginNavigation)
@@ -29,6 +31,17 @@ export default function (config) {
     Object.keys(shortcodes).forEach((name) => {
         config.addShortcode(name, shortcodes[name])
     })
+
+    // Dynamically import all .js files in components/ and add them as shortcodes
+    const components = fs.readdirSync('./src/components/')
+    for (const component of components) {
+        if (component.endsWith('.js')) {
+            const shortcodes = await import(`./src/components/${component}`)
+            Object.keys(shortcodes).forEach((name) => {
+                config.addShortcode(name, shortcodes[name])
+            })
+        }
+    }
 
     Object.keys(pairedShortcodes).forEach((name) => {
         config.addPairedShortcode(name, pairedShortcodes[name])
