@@ -18,6 +18,13 @@ class Navigation {
         this.focusTrap = createFocusTrap(this.nav)
 
         this.toggleBtn.addEventListener('click', () => this.toggleMenu())
+
+        // Close the menu when clicking outside of it
+        this.nav.addEventListener('click', (e) => {
+            if (e.target.tagName.toLowerCase() === 'ul') {
+                this.toggleMenu()
+            }
+        })
     }
 
     toggleMenu(force) {
