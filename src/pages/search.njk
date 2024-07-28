@@ -1,0 +1,26 @@
+---
+layout: base
+eleventyExcludeFromCollections: true
+permalink: "/posts/search/"
+---
+
+<div class="container">
+    <h1>Search</h1>
+    <input type="text" placeholder="Type to search" id="search" class="input input--search" autocomplete="off" />
+
+    <div class="search-results__container">
+        <p id="search-results-perf" class="search-results__perf"></p>
+        <p id="search-results-no-results" class="search-results__no-results">
+            Search results will appear here
+        </p>
+        <ol id="search-results" class="search-results"></ol>
+    </div>
+
+    <p style="margin-top: 3rem">
+        <a href="{{ '/posts/' | url }}"
+            class="back"
+        >{% icon "arrow-left" %}Back to Posts</a>
+    </p>
+</div>
+
+<script src="{{ '/assets/scripts/search.js' | url }}" defer></script>
