@@ -1,0 +1,33 @@
+.input--search {
+    padding: 0.6rem 1rem;
+    border-radius: $border-radius;
+
+    border: 1px solid black;
+    width: 100%;
+
+    @include t(background-color, 'bg-color');
+    @include t(border-color, 'gray-light');
+    @include t(color, 'text-color');
+}
+
+.search-results__container {
+    & .search-results__no-results {
+        margin-top: $spacing-y;
+        text-align: center;
+
+        @include t(color, 'gray');
+    }
+
+    & .search-results__perf {
+        @include t(color, 'gray');
+    }
+}
+
+.search__icon-header {
+    float: right;
+    font-size: 1rem;
+    line-height: 3.25rem;
+
+    color: black;
+    @include t(color, 'text-color');
+}
