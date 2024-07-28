@@ -5,8 +5,6 @@ eleventyNavigation:
     key: Projects
 ---
 
-{% import "../components/card.njk" as card %}
-
 <div class="container">
     <h1>Projects</h1>
 
@@ -15,41 +13,29 @@ eleventyNavigation:
         a curated compilation of my Github repos.
     </p>
 
-    {{
-        card.card("servum", "https://github.com/umcconnell/servum",
-        "A simple, fast, static server written in Rust. No dependencies. HTTP only.")
-    }}
+    {% card "servum", "https://github.com/umcconnell/servum",
+        "A simple, fast, static server written in Rust. No dependencies. HTTP only." %}
 
-    {{
-        card.card("destroyer2", "https://github.com/umcconnell/destroyer2",
+    {% card "destroyer2", "https://github.com/umcconnell/destroyer2",
         'Online multiplayer battleship game. Uses node and redis.<br />
         Play here: <a href="https://destroyer2.herokuapp.com/" target="_blank"\
-        >https://destroyer2.herokuapp.com/</a>')
-    }}
-    
-    {{
-        card.card("aquila", "https://github.com/intelligenerator/aquila",
+        >https://destroyer2.herokuapp.com/</a>' %}
+
+    {% card "aquila", "https://github.com/intelligenerator/aquila",
         "AI to assess building damage from satellite imagery after natural catastrophes.\
-        <br />Written using Python and Pytorch.")
-    }}
-    
-    {{
-        card.card("lc4", "https://github.com/umcconnell/lc4",
+        <br />Written using Python and Pytorch." %}
+
+    {% card "lc4", "https://github.com/umcconnell/lc4",
         'JavaScript encryption-decryption library for the lc4 cipher.<br />\
         Additional UI: <a href="https://lc4-encryptor.glitch.me"\
-        target="_blank">https://lc4-encryptor.glitch.me</a>')
-    }}
+        target="_blank">https://lc4-encryptor.glitch.me</a>' %}
 
-    {{
-        card.card("typespeed", "https://github.com/umcconnell/typespeed",
+    {% card "typespeed", "https://github.com/umcconnell/typespeed",
         'A speed typing game.<br />Play here:\
         <a href="https://umcconnell.github.io/typespeed/" target="_blank"\
-        >https://umcconnell.github.io/typespeed/</a>')
-    }}
+        >https://umcconnell.github.io/typespeed/</a>' %}
 
-    {{
-        card.card("tic-tac-toe", "https://github.com/umcconnell/tic-tac-toe",
-        "Unbeatable Python tic-tac-toe game with minimax. UI using Qt.")
-    }}
+    {% card "tic-tac-toe", "https://github.com/umcconnell/tic-tac-toe",
+        "Unbeatable Python tic-tac-toe game with minimax. UI using Qt." %}
 
 </div>

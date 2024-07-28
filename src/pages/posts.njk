@@ -9,15 +9,22 @@ pagination:
 permalink: "/posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}"
 ---
 
-{% import "../components/card.njk" as card %}
 {% import "../components/pagination.njk" as paginationNav %}
 
 <div class="container">
-    <h1>Archive</h1>
+    <h1>Archive
+    <a
+        href="{{ '/posts/search' | url }}"
+        class="search__icon-header"
+        aria-label="Access search"
+    >{% icon "search" %}</a>
+    </h1>
 
     <ol>
     {% for post in pagination.items  %}
-        <li>{{ card.postcard(post) }}</li>
+        {% set post_url %}{{ post.url | url }}{% endset %}
+        {% set post_date %}{{ post.data.date | dateLong }}{% endset %}
+        <li>{% postcard post_url, post.data.title, post_date, post.data.description, post.data.tags %}</li>
     {% endfor %}
     </ol>
 

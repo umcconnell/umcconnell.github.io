@@ -1,5 +1,3 @@
-{% import "../components/taglist.njk" as taglist %}
-
 {% extends "src/layouts/base.njk" %}
 
 {% block css %}
@@ -12,7 +10,7 @@
     <header class="post__heading">
         <h1 class="post__title">{{ title }}</h1>
         <em class="post__date">Published on {{ date | dateLong }}</em>
-        {{ taglist.taglist(tags, "post__tags") }}
+        {% taglist tags, "post__tags" %}
         <p class="post__description">{{description}}</p>
     </header>
 
