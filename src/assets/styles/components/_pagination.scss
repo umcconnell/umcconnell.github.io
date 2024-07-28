@@ -2,6 +2,11 @@
 
 .pagination {
     text-align: center;
+    padding-top: $spacing-y;
+
+    border-top: 1px solid white;
+    @include t(border-top-color, 'gray-light');
+
     & li {
         display: inline-block;
         margin: 0 math.div($spacing-x, 2);
