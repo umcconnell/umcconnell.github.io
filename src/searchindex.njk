@@ -1,0 +1,21 @@
+---
+permalink: searchindex.json
+eleventyExcludeFromCollections: true
+---
+{
+    "index": [
+    {%- for post in collections.posts | reverse -%}
+    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(meta.url) }}{% endset %}
+        {
+            "title": "{{ post.data.title }}",
+            "url": "{{ post.url | url }}",
+            "updated": "{{ post.date | dateToRfc3339 }}",
+            "description": "{{ post.data.description | striptags }}",
+            "content": "{{ post.templateContent | striptags }}",
+            "id": "{{ absolutePostUrl }}",
+            "tags": [{%- for tag in post.data.tags -%}"{{ tag }}"{%- if not loop.last -%}, {% endif -%}{%- endfor -%}]
+        }
+        {%- if not loop.last -%},{%- endif -%}
+    {%- endfor -%}
+    ]
+}
