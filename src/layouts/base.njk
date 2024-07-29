@@ -28,5 +28,8 @@
     </div>
 
     <script type="text/javascript" src="{{ '/assets/scripts/main.js' | url }}"></script>
+    {% if (build.env === "production") and (meta.analytics) %}
+    <script data-goatcounter="{{ meta.analytics }}" async src="//gc.zgo.at/count.js"></script>
+    {% endif %}
 </body>
 </html>

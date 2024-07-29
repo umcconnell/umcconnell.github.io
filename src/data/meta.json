@@ -11,6 +11,7 @@
 
     "url": "https://umcconnell.github.io",
     "custom_domain": "www.umcconnell.net",
+    "analytics": "https://umcconnell.goatcounter.com/count",
     "code": {
         "repo": "https://github.com/umcconnell/umcconnell.github.io",
         "branch": "main",
