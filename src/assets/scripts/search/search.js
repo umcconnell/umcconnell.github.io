@@ -10,7 +10,7 @@ const documents = await fetch('/searchindex.json').then((response) =>
 )
 
 const fuse = new Fuse(documents.index, {
-    keys: ['title', 'content', 'tags'],
+    keys: ['title', 'description', 'content', 'tags'],
     includeScore: true,
     ignoreLocation: true
 })
