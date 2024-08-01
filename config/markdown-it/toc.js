@@ -1,5 +1,5 @@
 import toc from 'markdown-it-table-of-contents'
-import { slugify } from '../../utils/markdown.js'
+import { slugify } from '#utils/markdown.js'
 
 export default function tocPlugin(md) {
     md.use(toc, {

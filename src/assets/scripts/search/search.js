@@ -1,5 +1,5 @@
 import Fuse from 'fuse.js/min-basic'
-import { postcard } from '../../../components/card.js'
+import { postcard } from '#src/components/card.js'
 
 const searchBar = document.getElementById('search')
 searchBar.value = new URLSearchParams(window.location.search).get('q') || ''

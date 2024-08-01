@@ -13,6 +13,10 @@
         "lint": "npx prettier --check .",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "imports": {
+        "#src/*": "./src/*",
+        "#utils/*": "./utils/*"
+    },
     "repository": {
         "type": "git",
         "url": "http://github.com/umcconnell/umcconnell.github.io"

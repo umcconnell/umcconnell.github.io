@@ -1,4 +1,4 @@
-import { shortcodes } from '../../utils/shortcodes.js'
+import { shortcodes } from '#utils/shortcodes.js'
 
 export default function externalLinks(
     md,

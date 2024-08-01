@@ -1,5 +1,5 @@
 import anchor from 'markdown-it-anchor'
-import { slugify } from '../../utils/markdown.js'
+import { slugify } from '#utils/markdown.js'
 
 const config = { slugify }
 
