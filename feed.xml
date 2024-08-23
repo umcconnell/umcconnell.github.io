@@ -54,7 +54,10 @@ adjust operating system &amp; more)</li>
 <li><strong>Network service tier</strong>: Standard</li>
 <li><strong>Firewall</strong>: Allow HTTP &amp; HTTPS traffic</li>
 </ul>
+<figure class="figure__no-number">
 <p><img src="https://umcconnell.github.io/assets/images/posts/opodsync/gcloud-boot-disk.png" alt="Static" /></p>
+<p></p><figcaption>Configuring the boot disk</figcaption><p></p>
+</figure>
 <p>More details and up-to-date configuration options can be found in the docs:
 <a href="https://cloud.google.com/free/docs/free-cloud-features#compute" target="_blank" rel="noopener noreferrer">https://cloud.google.com/free/docs/free-cloud-features#compute<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
