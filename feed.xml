@@ -55,7 +55,7 @@ adjust operating system &amp; more)</li>
 <li><strong>Firewall</strong>: Allow HTTP &amp; HTTPS traffic</li>
 </ul>
 <figure class="figure__no-number">
-<p><img src="https://umcconnell.github.io/assets/images/posts/opodsync/gcloud-boot-disk.png" alt="Static" /></p>
+<p><img src="https://umcconnell.github.io/assets/images/posts/opodsync/gcloud-boot-disk.png" alt="Configuring the boot disk" /></p>
 <p></p><figcaption>Configuring the boot disk</figcaption><p></p>
 </figure>
 <p>More details and up-to-date configuration options can be found in the docs:
