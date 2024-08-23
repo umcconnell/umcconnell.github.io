@@ -1,4 +1,6 @@
 .post {
+    counter-reset: figcaption 1;
+
     & .post__heading {
         margin-bottom: $spacing-y;
 
@@ -34,6 +36,14 @@
 
         & pre[class*='language-'] {
             margin-bottom: 1rem;
+        }
+
+        & figure::before {
+            counter-increment: figcaption;
+        }
+
+        & figure:not(.figure__no-number) > figcaption::before {
+            content: 'Figure ' counter(figcaption) '. ';
         }
 
         @include mq-down('md') {
