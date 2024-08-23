@@ -59,13 +59,13 @@ adjust operating system &amp; more)</li>
 <a href="https://cloud.google.com/free/docs/free-cloud-features#compute" target="_blank" rel="noopener noreferrer">https://cloud.google.com/free/docs/free-cloud-features#compute<svg class="icon icon--link-external" role="img" aria-hidden="true" width="24" height="24">
         <use xlink:href="#icon-link-external"></use>
         </svg></a>.</p>
-<p>Note that a monthly estimate of costs (around 7USD for the above configuration)
+<p>Note that a monthly estimate of costs (around 7 USD for the above configuration)
 will be shown, even if your selection is covered by the free tier.</p>
 <p>Once the VM is created, connect to it through SSH to install the synchronization
 server. The easiest way to connect is through the web interface, which opens a
 terminal directly in your browser. To do this, go to the VM instance overview
 (found under “Compute Engine” in the sidebar) and click “SSH”.</p>
-<p>As a first step, we install the Apache server:</p>
+<p>As a first step, install the Apache server:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token parameter variable">-y</span> <span class="token function">install</span> apache2</code></pre>
 <p>Check that Apache is running:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> systemctl status apache2</code></pre>
