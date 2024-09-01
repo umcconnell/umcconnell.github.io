@@ -36,7 +36,7 @@
         "cssesc": "^3.0.0",
         "del-cli": "^5.1.0",
         "focus-trap": "^7.5.4",
-        "focus-visible": "^5.2.0",
+        "focus-visible": "^5.2.1",
         "fuse.js": "^7.0.0",
         "html-minifier": "^4.0.0",
         "luxon": "^3.4.4",
