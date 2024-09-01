@@ -39,7 +39,7 @@
         "focus-visible": "^5.2.0",
         "fuse.js": "^7.0.0",
         "html-minifier": "^4.0.0",
-        "luxon": "^3.4.4",
+        "luxon": "^3.5.0",
         "markdown-it": "^14.1.0",
         "markdown-it-anchor": "^9.0.1",
         "markdown-it-footnote": "^4.0.0",
