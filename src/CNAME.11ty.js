@@ -10,6 +10,7 @@ export default class Cname {
 
         return {
             permalink: !!meta.custom_domain ? 'CNAME' : false,
+            eleventyAllowMissingExtension: true,
             eleventyExcludeFromCollections: true
         }
     }
