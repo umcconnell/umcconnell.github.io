@@ -3,4 +3,4 @@
 User-agent: *
 Disallow: /build.txt
 
-Sitemap: https://umcconnell.github.io/sitemap.xml
+Sitemap: https://www.umcconnell.net/sitemap.xml
