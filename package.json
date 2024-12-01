@@ -35,7 +35,7 @@
         "critical": "^7.2.1",
         "cssesc": "^3.0.0",
         "del-cli": "^6.0.0",
-        "focus-trap": "^7.6.0",
+        "focus-trap": "^7.6.2",
         "focus-visible": "^5.2.1",
         "fuse.js": "^7.0.0",
         "html-minifier": "^4.0.0",
