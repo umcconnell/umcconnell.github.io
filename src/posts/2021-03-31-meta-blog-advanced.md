@@ -55,21 +55,21 @@ The styles are then imported and bundled in `main.scss`.
 
 The styles are grouped into three main folders:
 
--   [`base`]({{ 'src/assets/styles/base/'  | sourceRepo }}):
-    The base styling comprises basic stylesheets used globally throughout the
-    page, such as normalization or typography. These styles are very generic,
-    meaning you probably want to modify styles in different places, such as the
-    `components/` folder for specific components.
+- [`base`]({{ 'src/assets/styles/base/'  | sourceRepo }}):
+  The base styling comprises basic stylesheets used globally throughout the
+  page, such as normalization or typography. These styles are very generic,
+  meaning you probably want to modify styles in different places, such as the
+  `components/` folder for specific components.
 
--   [`components`]({{ 'src/assets/styles/components/' | sourceRepo }}):
-    These styles consist of more specific styles tailored to certain components,
-    such as the footer, the navigation or the post tags. This is probably the
-    best place to modify or add new styles when customizing the website.
+- [`components`]({{ 'src/assets/styles/components/' | sourceRepo }}):
+  These styles consist of more specific styles tailored to certain components,
+  such as the footer, the navigation or the post tags. This is probably the
+  best place to modify or add new styles when customizing the website.
 
--   [`utils`]({{ 'src/assets/styles/utils/' | sourceRepo }}):
-    The utilities are mostly SCSS-specific functions, that make use of SCSS's
-    scripting features. This is also where the global variables for colors,
-    breakpoints, etc. are defined for the entire page.
+- [`utils`]({{ 'src/assets/styles/utils/' | sourceRepo }}):
+  The utilities are mostly SCSS-specific functions, that make use of SCSS's
+  scripting features. This is also where the global variables for colors,
+  breakpoints, etc. are defined for the entire page.
 
 The compilation process, including minification, and error handling is defined
 in the
@@ -137,8 +137,8 @@ in HTML/Nunjucks files by wrapping sections in such an element.
 
 The following markdown-it plugins are used in this blog:
 
--   [markdown-it-anchor](https://www.npmjs.com/package/markdown-it-anchor)
--   [@iktakahiro/markdown-it-katex](https://www.npmjs.com/package/@iktakahiro/markdown-it-katex)
+- [markdown-it-anchor](https://www.npmjs.com/package/markdown-it-anchor)
+- [@iktakahiro/markdown-it-katex](https://www.npmjs.com/package/@iktakahiro/markdown-it-katex)
 
 Additionally, two custom plugins, one for the arrow icons after external links,
 and one for the anchor links when hovering over headings, are implemented in the
@@ -181,8 +181,8 @@ This produces an SVG element: {% icon 'pencil' %}
 
 The standard shortcodes available out of the box are:
 
--   `icon` to embed icons from `src/assets/icons/`
--   `ytvideo` to embed YouTube videos based on their id
+- `icon` to embed icons from `src/assets/icons/`
+- `ytvideo` to embed YouTube videos based on their id
 
 There are also paired shortcodes, that wrap a markup section, such as this one:
 
@@ -204,8 +204,8 @@ An informative message that **even** supports _Markdown_!
 
 The paired shortcodes available out of the box are:
 
--   `msg` for message boxes
--   `details` for an expandable HTML summary/details element
+- `msg` for message boxes
+- `details` for an expandable HTML summary/details element
 
 #### KaTeX
 
@@ -248,28 +248,28 @@ language for the blog.
 
 There are several places where Nunjucks is used:
 
--   [`src/components/`]({{ 'src/components/' | sourceRepo }}):
-    Nunjucks allows imports of so-called
-    [macros](https://mozilla.github.io/nunjucks/templating.html#macro), which
-    are used to represent the components. Macros are similar to functions and
-    accept arguments to construct a parameterized output.
+- [`src/components/`]({{ 'src/components/' | sourceRepo }}):
+  Nunjucks allows imports of so-called
+  [macros](https://mozilla.github.io/nunjucks/templating.html#macro), which
+  are used to represent the components. Macros are similar to functions and
+  accept arguments to construct a parameterized output.
 
--   [`src/includes/`]({{ 'src/includes/' | sourceRepo }}):
-    Nunjucks'
-    [includes](https://mozilla.github.io/nunjucks/templating.html#include) allow
-    you to literally include chunks of markup as reusable units. This is used
-    for non-variant parts of the website, such as the footer, header, etc..
+- [`src/includes/`]({{ 'src/includes/' | sourceRepo }}):
+  Nunjucks'
+  [includes](https://mozilla.github.io/nunjucks/templating.html#include) allow
+  you to literally include chunks of markup as reusable units. This is used
+  for non-variant parts of the website, such as the footer, header, etc..
 
--   [`src/layouts/`]({{ 'src/layouts/' | sourceRepo }}):
-    Layouts are page skeletons that are used as a common base among pages.
-    The base layout is the HTML skeleton for all other pages and layouts.
-    The post layout extends this base layout to include additional stylesheets
-    for code highlighting or the utterances comment widget.
+- [`src/layouts/`]({{ 'src/layouts/' | sourceRepo }}):
+  Layouts are page skeletons that are used as a common base among pages.
+  The base layout is the HTML skeleton for all other pages and layouts.
+  The post layout extends this base layout to include additional stylesheets
+  for code highlighting or the utterances comment widget.
 
--   [`src/pages/`]({{ 'src/pages/' | sourceRepo }}):
-    The pages represent concrete pages of the website, such as the
-    [About page](/about/) or the [Projects page](/projects/). These are written
-    with Nunjucks, but already include front matter for 11ty.
+- [`src/pages/`]({{ 'src/pages/' | sourceRepo }}):
+  The pages represent concrete pages of the website, such as the
+  [About page](/about/) or the [Projects page](/projects/). These are written
+  with Nunjucks, but already include front matter for 11ty.
 
 ## 11ty
 
@@ -297,9 +297,9 @@ via the `icon` [shortcode](#shortcodes).
 
 The 11ty plugins used in this blog are:
 
--   [@11ty/eleventy-plugin-rss](https://www.npmjs.com/package/@11ty/eleventy-plugin-rss)
--   [@11ty/eleventy-plugin-syntaxhighlight](https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight)
--   [@11ty/eleventy-navigation](https://www.npmjs.com/package/@11ty/eleventy-navigation)
+- [@11ty/eleventy-plugin-rss](https://www.npmjs.com/package/@11ty/eleventy-plugin-rss)
+- [@11ty/eleventy-plugin-syntaxhighlight](https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight)
+- [@11ty/eleventy-navigation](https://www.npmjs.com/package/@11ty/eleventy-navigation)
 
 You can find the full list of available plugins in the
 [11ty docs](https://www.11ty.dev/docs/plugins/)

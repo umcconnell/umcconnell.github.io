@@ -108,9 +108,9 @@ above:
 
 <style>.msg--algorithm ul ol { list-style-type: decimal; }</style>
 
--   `Input`: Independent set $I \in \mathcal{I}(G)$, integer $q \leq |I|$
--   `Output`: selected vertices $S$, available vertices $A$
--   `Procedure`:
+- `Input`: Independent set $I \in \mathcal{I}(G)$, integer $q \leq |I|$
+- `Output`: selected vertices $S$, available vertices $A$
+- `Procedure`:
     1. Set available vertices $A = V(G)$, selected vertices $S = \varnothing$
     2. Iterate for $i=1, \dots, q$:
         - Let $A = (v_1, \dots, v_{|A|})$ be ordered by max-degree
@@ -233,22 +233,22 @@ has an extensive collection of such bounds.
 
 ## Overview of notation
 
--   Vertex set $V(G)$
--   Edge count $e_G(X)$: Number of edges in $G$ on vertex set $X$
--   Neighborhood $\mathcal{N}(v)$: set of vertices adjacent to $v$
--   Induced subgraph $G[A]$: Obtained from $G$ by keeping all vertices in $A$ and their edges among them
--   Independence number $\alpha(G)$: Size of largest independent set in $G$
--   Independent sets $\mathcal{I}(G)$: Collection of all independent sets in $G$
--   Independent sets $\mathcal{I}(G, m)$: Collection of all independent sets in $G$ of size exactly $m$
+- Vertex set $V(G)$
+- Edge count $e_G(X)$: Number of edges in $G$ on vertex set $X$
+- Neighborhood $\mathcal{N}(v)$: set of vertices adjacent to $v$
+- Induced subgraph $G[A]$: Obtained from $G$ by keeping all vertices in $A$ and their edges among them
+- Independence number $\alpha(G)$: Size of largest independent set in $G$
+- Independent sets $\mathcal{I}(G)$: Collection of all independent sets in $G$
+- Independent sets $\mathcal{I}(G, m)$: Collection of all independent sets in $G$ of size exactly $m$
 
 ## Further reading
 
 Some ressources for further details, including applications to various combinatorial problems
 and extensions of the container method to hypergraphs, are given below:
 
--   Wikipedia: https://en.wikipedia.org/wiki/Container_method
--   Survey paper by Samotij: https://arxiv.org/pdf/1412.0940.pdf
--   Lecture notes by Liu: https://homepages.warwick.ac.uk/staff/H.Liu.9/topic-comb-lecture15.pdf
+- Wikipedia: https://en.wikipedia.org/wiki/Container_method
+- Survey paper by Samotij: https://arxiv.org/pdf/1412.0940.pdf
+- Lecture notes by Liu: https://homepages.warwick.ac.uk/staff/H.Liu.9/topic-comb-lecture15.pdf
 
 [^1]: https://arxiv.org/pdf/1412.0940.pdf
 

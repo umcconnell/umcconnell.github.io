@@ -20,10 +20,10 @@ often in relation to the golden ratio.
 To generate the sequence, start with the sequence `1, 1`. Then, generate the
 next element in the sequence by adding up the last two elements:
 
--   `1, 1`
--   `1, 1, 2`
--   `1, 1, 2, 3`
--   ...
+- `1, 1`
+- `1, 1, 2`
+- `1, 1, 2, 3`
+- ...
 
 Mathematically, this can elegantly be expressed using recursion. In this
 formula, _n_ represents a given position in the sequence starting with _0_.

@@ -7,14 +7,14 @@ Just my personal blog.
 
 ## Table of Contents
 
--   [Getting Started](#getting-started)
-    -   [Prerequisites](#prerequisites)
-    -   [Initial setup](#initial-setup)
--   [Contributing](#contributing)
--   [Versioning](#versioning)
--   [Authors](#authors)
--   [License](#license)
--   [Acknowledgments](#acknowledgments)
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Initial setup](#initial-setup)
+- [Contributing](#contributing)
+- [Versioning](#versioning)
+- [Authors](#authors)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 ## Getting Started
 
@@ -81,11 +81,11 @@ This project is licensed under the MIT License - see the
 
 ## Acknowledgments
 
--   [11ty](https://www.11ty.dev/) - Static site generator
--   [eleventastic](https://github.com/maxboeck/eleventastic) - 11ty base template
--   [Nunjucks](https://mozilla.github.io/nunjucks/) - Templating language
--   [markdown-it](https://github.com/markdown-it/markdown-it) - Markdown
--   [Prism.js](https://prismjs.com/) - Code Highlighting
--   [KaTeX](https://katex.org/) - Math
--   [Primer Icons](https://primer.style/octicons/) Icons
--   [utterances](https://utteranc.es/) - Comment system
+- [11ty](https://www.11ty.dev/) - Static site generator
+- [eleventastic](https://github.com/maxboeck/eleventastic) - 11ty base template
+- [Nunjucks](https://mozilla.github.io/nunjucks/) - Templating language
+- [markdown-it](https://github.com/markdown-it/markdown-it) - Markdown
+- [Prism.js](https://prismjs.com/) - Code Highlighting
+- [KaTeX](https://katex.org/) - Math
+- [Primer Icons](https://primer.style/octicons/) Icons
+- [utterances](https://utteranc.es/) - Comment system

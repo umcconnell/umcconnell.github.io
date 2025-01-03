@@ -44,10 +44,10 @@ such a boring thing?
 Well, it turns out there're quite a lot of advantages to static sites, if all
 you have is static content. Static sites are...
 
--   **faster**: only HTML, CSS, JS and images are served
--   **safer**: no login systems, etc. means a minimal attack surface
--   **more accessible**: an old browser and a slow internet connection is fine
--   **cheaper**: free hosting available, e.g. with Github Pages or Netlify
+- **faster**: only HTML, CSS, JS and images are served
+- **safer**: no login systems, etc. means a minimal attack surface
+- **more accessible**: an old browser and a slow internet connection is fine
+- **cheaper**: free hosting available, e.g. with Github Pages or Netlify
 
 ... than their dynamic counterparts.
 
@@ -80,10 +80,10 @@ JavaScript ecosystem and write your own plugins in JavaScript.
 Before we get started with the setup, make sure you have the following
 prerequisites:
 
--   **git**: You can find installation instructions for all platforms
-    [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
--   **github**: You can create an account [here](https://github.com/join)
--   **node**: You can download node from [here](https://nodejs.org/en/download/)
+- **git**: You can find installation instructions for all platforms
+  [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- **github**: You can create an account [here](https://github.com/join)
+- **node**: You can download node from [here](https://nodejs.org/en/download/)
 
 ### Cloning
 
@@ -123,10 +123,10 @@ see the blog as it appears here.
 Now the blog is ready for customization. To do that, you will need to change
 four files:
 
--   [`package.json`](#packagejson)
--   [`LICENSE`](#license)
--   [`src/site.webmanifest`](#srcsitewebmanifest)
--   [`src/data/meta.json`](#srcdatametajson)
+- [`package.json`](#packagejson)
+- [`LICENSE`](#license)
+- [`src/site.webmanifest`](#srcsitewebmanifest)
+- [`src/data/meta.json`](#srcdatametajson)
 
 ### package.json
 
@@ -183,12 +183,12 @@ site.
 Most importantly however, change the fields in the `code` section of the
 webmanifest:
 
--   The `repo` entry should point to the Github repository of the
-    website (`https://github.com/GH_USERNAME/GH_USERNAME.github.io`).
+- The `repo` entry should point to the Github repository of the
+  website (`https://github.com/GH_USERNAME/GH_USERNAME.github.io`).
 
--   The `comments` field points to the repository that will save user comments
-    from the blog. This should be `GH_USERNAME/comments`. We'll create this repo
-    later.
+- The `comments` field points to the repository that will save user comments
+  from the blog. This should be `GH_USERNAME/comments`. We'll create this repo
+  later.
 
 Once you've saved the files, you should be able to see your name appear on the
 blog.

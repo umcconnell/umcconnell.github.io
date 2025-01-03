@@ -139,10 +139,10 @@ must be connected to at least $\delta(G) - l \geq \frac{|V|}{2} - l \geq 1$ vert
 $v_1, \dots, v_{k-1}$, excluding vertices $v_k, \dots, v_{k+l-1}$ in $P'$. So $v_{k + l}$ must be connected to
 another vertex $v_i \in C$ with $v_i \not = v_k$. We can estable the following two inequalities on $i$:
 
--   $i \geq l + 1$: We can form a new cycle $C' = v_{k + l}, v_i, \dots, v_k, \dots, v_{k + l}$ of length $k + l - i + 1$.
-    Because $C$ is the longest cycle in $G$, we obtain $k + l - i + 1 \leq k \iff i \geq l + 1$
--   $i \leq k - l - 1$: We could also form a new cycle $C'' = v_1, \dots, v_i, v_{k + l}, \dots, v_k, v_1$ of length
-    $i + l + 1$. Just as before we obtain $i + l + 1 \leq k \iff i \leq k - l - 1$.
+- $i \geq l + 1$: We can form a new cycle $C' = v_{k + l}, v_i, \dots, v_k, \dots, v_{k + l}$ of length $k + l - i + 1$.
+  Because $C$ is the longest cycle in $G$, we obtain $k + l - i + 1 \leq k \iff i \geq l + 1$
+- $i \leq k - l - 1$: We could also form a new cycle $C'' = v_1, \dots, v_i, v_{k + l}, \dots, v_k, v_1$ of length
+  $i + l + 1$. Just as before we obtain $i + l + 1 \leq k \iff i \leq k - l - 1$.
 
 By the two inequalities, we conclude that $v_{k + l}$ is connected to at least $\frac{|V|}{2} - l \geq 1$ vertices
 in $I = v_{l + 1}, \dots, v_{k - l - 1}$. Notice that there are $|I| = k - 2l - 1$ such vertices.
@@ -176,8 +176,8 @@ so-called rotation-extension technique by Pósa[^posa]. Personally, I find this 
 most elegant of the three, especially because of the neat double induction that is used. The
 general structure of the proof consists of two parts:
 
--   A $k$-cycle implies the existence of a $k+1$-path, as $G$ is connected
--   A $k$-path implies the existence of a $k+1$-path or a $k$ cycle.
+- A $k$-cycle implies the existence of a $k+1$-path, as $G$ is connected
+- A $k$-path implies the existence of a $k+1$-path or a $k$ cycle.
 
 By induction $G$ thus has an $|V|$-cycle, i.e. a Hamiltonian cycle.
 
@@ -334,17 +334,17 @@ $C = x, v_{i+1}, \dots, y, v_i, \dots, x$ in $G$, a contradiction.
 
 ## Further reading
 
--   Wikipedia: [Hamiltonian Path](https://en.wikipedia.org/wiki/Hamiltonian_path)
--   Wikipedia: [Ore's theorem](https://en.wikipedia.org/wiki/Ore%27s_theorem)
--   Dirac's original paper: [https://doi.org/10.1112/plms/s3-2.1.69](https://doi.org/10.1112/plms/s3-2.1.69)
+- Wikipedia: [Hamiltonian Path](https://en.wikipedia.org/wiki/Hamiltonian_path)
+- Wikipedia: [Ore's theorem](https://en.wikipedia.org/wiki/Ore%27s_theorem)
+- Dirac's original paper: [https://doi.org/10.1112/plms/s3-2.1.69](https://doi.org/10.1112/plms/s3-2.1.69)
 
 ## Overview of notation
 
--   Complete graph $K_n$ on $n$ vertices
--   Neighborhood $\mathcal{N}(v)$: set of vertices adjacent to $v$
--   Extended neighborhood $\mathcal{N}^+(u)$ over an order of vertices: sucessors of neighbors of $u$  
-    $\mathcal{N}^+(u) := \{ v_{i+1} \;\vert\; v_i \in \mathcal{N}(u)\}$
--   Minimum degree $\delta(G) := \min_{v \in V} \deg_G(v)$
+- Complete graph $K_n$ on $n$ vertices
+- Neighborhood $\mathcal{N}(v)$: set of vertices adjacent to $v$
+- Extended neighborhood $\mathcal{N}^+(u)$ over an order of vertices: sucessors of neighbors of $u$  
+  $\mathcal{N}^+(u) := \{ v_{i+1} \;\vert\; v_i \in \mathcal{N}(u)\}$
+- Minimum degree $\delta(G) := \min_{v \in V} \deg_G(v)$
 
 [^dirac]: Dirac, G.A. (1952), Some Theorems on Abstract Graphs. _Proceedings of the London Mathematical Society_, s3-2: 69-81. https://doi.org/10.1112/plms/s3-2.1.69
 
