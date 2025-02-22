@@ -19,6 +19,13 @@ export const shortcodes = {
         </svg>`
     },
 
+    figure: function (imgUrl, caption, numbering = true, maxHeight = null) {
+        return `<figure class="figure ${!numbering ? 'figure__no-number' : ''}">
+            <img src="${imgUrl}" alt="${caption}" ${maxHeight ? 'style="max-height: ' + maxHeight + ';"' : ''}>
+            <figcaption>${caption}</figcaption>
+        </figure>`
+    },
+
     // Inspired by https://css-tricks.com/lazy-load-embedded-youtube-videos/
     ytvideo: function (
         id,
