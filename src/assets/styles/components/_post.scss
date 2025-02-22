@@ -1,5 +1,9 @@
+.post::before {
+    counter-reset: figcaption;
+}
+
 .post {
-    counter-reset: figcaption 1;
+    // counter-reset: figcaption 1;
 
     & .post__heading {
         margin-bottom: $spacing-y;
@@ -38,8 +42,18 @@
             margin-bottom: 1rem;
         }
 
-        & figure::before {
+        & figure:not(.figure__no-number) {
             counter-increment: figcaption;
+        }
+
+        & figure img {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        & figure figcaption {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
         }
 
         & figure:not(.figure__no-number) > figcaption::before {
