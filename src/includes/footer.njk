@@ -50,7 +50,10 @@
         </div>
 
         <div class="footer__right">
-            <a href="{{ meta.social_media.github }}" aria-label="Access Github profile">{% icon "github" %}</a>
+            <a href="{{ meta.social_media.github }}" aria-label="Access Github profile"
+               rel="license noopener noreferrer" target="_blank">{% icon "github" %}</a>
+            <a href="{{ meta.social_media.bluesky }}" aria-label="Access Bluesky profile"
+               rel="license noopener noreferrer" target="_blank">{% icon "bluesky" %}</a>
             <a href="{{ '/feed.xml' | url }}" aria-label="Access RSS feed">{% icon "rss" %}</a>
         </div>
     </div>
