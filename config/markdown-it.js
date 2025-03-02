@@ -7,6 +7,7 @@ import toc from './markdown-it/toc.js'
 
 import externalLinks from './markdown-it/external-link.js'
 import anchorLink from './markdown-it/anchor-link.js'
+import codeLangLabels from './markdown-it/codeLangLabel.js'
 
 const config = {
     html: true,
@@ -18,6 +19,7 @@ const config = {
 const md = markdownIt(config)
     .use(footnote)
     .use(katex)
+    .use(codeLangLabels)
     .use(anchor)
     .use(externalLinks)
     .use(anchorLink)

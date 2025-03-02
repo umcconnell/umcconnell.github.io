@@ -61,9 +61,12 @@
         }
 
         @include mq-down('md') {
-            & pre[class*='language-'] {
+            & .code-block-wrapper {
                 width: 100vw;
                 margin-left: -5vw;
+            }
+
+            & pre[class*='language-'] {
                 border-radius: 0;
             }
 

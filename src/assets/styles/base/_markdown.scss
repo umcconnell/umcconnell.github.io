@@ -312,6 +312,23 @@
 //-------------
 // Code and pre
 //-------------
+.code-block-wrapper {
+    position: relative;
+}
+
+.code-block-wrapper > .code-lang-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    color: #bbb;
+    background-color: #2d2d2d;
+    font-family: monospace;
+    user-select: none;
+    border-radius: 0 0 0 $border-radius;
+}
+
 .markdown pre[class*='language-'] {
     border-radius: $border-radius;
 }

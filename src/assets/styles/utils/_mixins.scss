@@ -1,11 +1,15 @@
 //--------------------
 // SCSS MIXINS
 //--------------------
+@use 'sass:color';
+
 @function transparentize-light($color) {
-    @return transparentize($color, 0.1);
+    @return color.scale($color, $alpha: -10%);
+    // @return transparentize($color, 0.1);
 }
 @function transparentize-strong($color) {
-    @return transparentize($color, 0.5);
+    @return color.scale($color, $alpha: -50%);
+    // @return transparentize($color, 0.5);
 }
 
 @mixin themed-property(
