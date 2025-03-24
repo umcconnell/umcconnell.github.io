@@ -25,13 +25,14 @@ eleventyNavigation:
     </p>
 
     <h2 class="u-mt2">Latest posts</h2>
-    <ol>
-        {% for post in collections.posts | reverse | take(5) %}
-        <li>
-            <a href="{{ post.url | url }}">
-                {{ post.data.title }}
-            </a>
-        </li>
+
+    <div class="card-grid">
+        {% for post in collections.posts | reverse | take(3) %}
+        <div class="card card--post-preview">
+            <h3 class="card--post-preview__title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+            <p class="u-mb1">{{ post.data.description }}</p>
+            <a href="{{ post.url | url }}">Read more &rarr;</a>
+        </div>
         {% endfor %}
-    </ol>
+    </div>
 </div>

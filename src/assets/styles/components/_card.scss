@@ -27,3 +27,28 @@
         margin-top: $spacing-y-small;
     }
 }
+
+.card--post-preview {
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0.7rem;
+    max-width: calc(100vw - 2rem);
+    @include t(background-color, 'bg-color', $transform: 'darken-light');
+
+    & .card--post-preview__title {
+        margin: 0;
+        font-weight: bold;
+
+        & a {
+            text-decoration: none;
+            @include t(color, 'text-color');
+        }
+    }
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 1rem;
+    grid-auto-flow: dense;
+}

@@ -12,6 +12,10 @@
     // @return transparentize($color, 0.5);
 }
 
+@function darken-light($color) {
+    @return darken($color, 6%);
+}
+
 @mixin themed-property(
     $theme,
     $property,
