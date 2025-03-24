@@ -28,11 +28,11 @@ eleventyNavigation:
 
     <div class="card-grid">
         {% for post in collections.posts | reverse | take(3) %}
-        <div class="card card--post-preview">
-            <h3 class="card--post-preview__title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+        <a href="{{ post.url | url }}" class="card card--post-preview"><div>
+            <h3 class="card--post-preview__title">{{ post.data.title }}</h3>
             <p class="u-mb1">{{ post.data.description }}</p>
-            <a href="{{ post.url | url }}">Read more &rarr;</a>
-        </div>
+            <span class="link">Read more &rarr;</span>
+        </div></a>
         {% endfor %}
     </div>
 </div>

@@ -33,17 +33,20 @@
     padding: 1rem;
     border-radius: 0.7rem;
     max-width: calc(100vw - 2rem);
-    @include t(background-color, 'bg-color', $transform: 'darken-light');
+    text-decoration: none;
+    transition: box-shadow 0.2s;
 
     & .card--post-preview__title {
         margin: 0;
         font-weight: bold;
-
-        & a {
-            text-decoration: none;
-            @include t(color, 'text-color');
-        }
     }
+
+    &:hover {
+        box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+    }
+
+    @include t(background-color, 'bg-color', $transform: 'darken-light');
+    @include t(color, 'text-color');
 }
 
 .card-grid {

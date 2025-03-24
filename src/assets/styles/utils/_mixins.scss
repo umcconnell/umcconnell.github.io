@@ -12,8 +12,16 @@
     // @return transparentize($color, 0.5);
 }
 
+@function lighten-light($color) {
+    @return lighten($color, 6%);
+}
+
 @function darken-light($color) {
     @return darken($color, 6%);
+}
+
+@function darken-strong($color) {
+    @return darken($color, 12%);
 }
 
 @mixin themed-property(
