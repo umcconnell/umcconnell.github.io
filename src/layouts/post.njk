@@ -36,7 +36,7 @@
         <div class="post__comments">
             <h2>Comments</h2>
             {# Comments function only in production #}
-            {% if build.env !== "production" %}
+            {% if build.env === "production" %}
             <script src="https://giscus.app/client.js"
                 data-repo="{{ meta.code.comments }}"
                 data-repo-id="MDEwOlJlcG9zaXRvcnkzNDY3ODYyMzQ="
