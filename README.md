@@ -88,4 +88,4 @@ This project is licensed under the MIT License - see the
 - [Prism.js](https://prismjs.com/) - Code Highlighting
 - [KaTeX](https://katex.org/) - Math
 - [Primer Icons](https://primer.style/octicons/) Icons
-- [utterances](https://utteranc.es/) - Comment system
+- [giscus](https://giscus.app/) - Comment system
