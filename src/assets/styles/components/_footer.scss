@@ -1,9 +1,11 @@
+@use "../utils/variables";
+
 .footer {
     font-size: 0.875rem;
-    padding: $spacing-y 0 ($spacing-y - 1rem) 0;
-    margin-top: $spacing-y;
+    padding: variables.$spacing-y 0 (variables.$spacing-y - 1rem) 0;
+    margin-top: variables.$spacing-y;
 
-    background-color: $brand-color-primary;
+    background-color: variables.$brand-color-primary;
     color: #fff;
 
     // Links & Icons
@@ -24,7 +26,7 @@
 
     &__left {
         margin-bottom: 1rem;
-        margin-right: $spacing-x;
+        margin-right: variables.$spacing-x;
     }
 
     &__right {

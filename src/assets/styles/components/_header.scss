@@ -1,5 +1,7 @@
+@use "../utils/variables";
+
 .header {
-    padding: $spacing-y 0;
+    padding: variables.$spacing-y 0;
 
     &__inner {
         display: flex;

@@ -1,3 +1,5 @@
+@use "../utils/mixins";
+
 // UTILITY CLASSES
 // All of these have !important because they should always overrule any other style
 
@@ -50,17 +52,17 @@
 // Display Utils
 
 .u-mobile-only {
-    @include mq(md) {
+    @include mixins.mq(md) {
         display: none !important;
     }
 }
 .u-tablet-only {
-    @include mq(lg) {
+    @include mixins.mq(lg) {
         display: none !important;
     }
 }
 .u-desktop-only {
-    @include mq-down(lg) {
+    @include mixins.mq-down(lg) {
         display: none !important;
     }
 }

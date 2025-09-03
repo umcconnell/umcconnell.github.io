@@ -1,22 +1,25 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
 .taglist {
     &__tag {
         display: inline-block;
         padding: 0.1rem 0.6rem;
         // background-color: $gray-light;
-        background-color: rgba($brand-color-primary, 0.3);
+        background-color: rgba(variables.$brand-color-primary, 0.3);
         border-radius: 1rem;
         // border: 1px solid $brand-color-primary;
-        @include t(color, 'gray-darkest');
+        @include mixins.t(color, 'gray-darkest');
 
         & a {
             color: white;
             text-decoration: none;
 
-            @include t(color, 'gray-darkest');
+            @include mixins.t(color, 'gray-darkest');
         }
 
         &:not(:first-child) {
-            margin-left: $spacing-x-small;
+            margin-left: variables.$spacing-x-small;
         }
     }
 }

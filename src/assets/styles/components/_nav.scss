@@ -1,9 +1,13 @@
+@use "sass:map";
+@use "../utils/mixins";
+@use "../utils/variables";
+
 .nav {
     &__menu {
         display: none;
-        @include coverall();
+        @include mixins.coverall();
         position: fixed;
-        @include t(
+        @include mixins.t(
             background-color,
             'bg-color',
             $transform: 'transparentize-light'
@@ -16,21 +20,21 @@
         text-decoration: none;
     }
     &__toggle {
-        @include button-reset;
+        @include mixins.button-reset;
     }
 
-    @include mq-down(lg) {
+    @include mixins.mq-down(lg) {
         &__menu {
             height: 100vh;
-            padding-top: 3 * $spacing-y;
-            z-index: map-get($z-layers, 'nav');
+            padding-top: 3 * variables.$spacing-y;
+            z-index: map.get(variables.$z-layers, 'nav');
             text-align: center;
-            font-size: 1.5 * $font-size-base;
+            font-size: 1.5 * variables.$font-size-base;
         }
 
         &__toggle {
             position: relative;
-            z-index: map-get($z-layers, 'nav') + 1;
+            z-index: map.get(variables.$z-layers, 'nav') + 1;
         }
 
         &.is-open &__menu {
@@ -46,7 +50,7 @@
         }
     }
 
-    @include mq(lg) {
+    @include mixins.mq(lg) {
         &__toggle {
             display: none;
         }

@@ -1,20 +1,23 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
 //
 // Screenreaders
 //
 
 .sr-only {
-    @include sr-only();
+    @include mixins.sr-only();
 }
 
 .sr-only-focusable {
-    @include sr-only-focusable();
+    @include mixins.sr-only-focusable();
 }
 
 .sr-skip-link {
-    font-family: $font-family-sans-serif;
+    font-family: variables.$font-family-sans-serif;
 
-    @include sr-only();
-    @include sr-only-focusable();
+    @include mixins.sr-only();
+    @include mixins.sr-only-focusable();
 
     &:focus {
         position: absolute;

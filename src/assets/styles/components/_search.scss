@@ -1,25 +1,28 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
 .input--search {
     padding: 0.6rem 1rem;
-    border-radius: $border-radius;
+    border-radius: variables.$border-radius;
 
     border: 1px solid black;
     width: 100%;
 
-    @include t(background-color, 'bg-color');
-    @include t(border-color, 'gray-light');
-    @include t(color, 'text-color');
+    @include mixins.t(background-color, 'bg-color');
+    @include mixins.t(border-color, 'gray-light');
+    @include mixins.t(color, 'text-color');
 }
 
 .search-results__container {
     & .search-results__no-results {
-        margin-top: $spacing-y;
+        margin-top: variables.$spacing-y;
         text-align: center;
 
-        @include t(color, 'gray');
+        @include mixins.t(color, 'gray');
     }
 
     & .search-results__perf {
-        @include t(color, 'gray');
+        @include mixins.t(color, 'gray');
     }
 }
 
@@ -29,5 +32,5 @@
     line-height: 3.25rem;
 
     color: black;
-    @include t(color, 'text-color');
+    @include mixins.t(color, 'text-color');
 }

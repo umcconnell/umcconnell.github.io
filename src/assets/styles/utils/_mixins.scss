@@ -1,3 +1,9 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:string';
+@use 'functions';
+@use 'variables';
+
 //--------------------
 // SCSS MIXINS
 //--------------------
@@ -13,15 +19,15 @@
 }
 
 @function lighten-light($color) {
-    @return lighten($color, 6%);
+    @return color.adjust($color, $lightness: 6%);
 }
 
 @function darken-light($color) {
-    @return darken($color, 6%);
+    @return color.adjust($color, $lightness: -6%);
 }
 
 @function darken-strong($color) {
-    @return darken($color, 12%);
+    @return color.adjust($color, $lightness: -12%);
 }
 
 @mixin themed-property(
@@ -33,10 +39,10 @@
     $transform: false
 ) {
     @if $transform {
-        $resolved: map-get($theme, $color);
-        $value: call(get-function($transform), $resolved);
+        $resolved: map.get($theme, $color);
+        $value: meta.call(meta.get-function($transform), $resolved);
 
-        #{$property}: unquote(
+        #{$property}: string.unquote(
             $additionalPropertiesUpFront +
                 ' ' +
                 $value +
@@ -44,10 +50,10 @@
                 $additionalProperties
         );
     } @else {
-        #{$property}: unquote(
+        #{$property}: string.unquote(
             $additionalPropertiesUpFront +
                 ' ' +
-                map-get($theme, $color) +
+                map.get($theme, $color) +
                 $additionalProperties
         );
     }
@@ -60,21 +66,12 @@
     $additionalProperties: '',
     $transform: false
 ) {
-    $light: map-get($themes, 'light-theme');
-    $dark: map-get($themes, 'dark-theme');
+    $light: map.get(variables.$themes, 'light-theme');
+    $dark: map.get(variables.$themes, 'dark-theme');
 
-    @include themed-property(
-        $light,
-        $property,
-        $color,
-        $additionalPropertiesUpFront,
-        $additionalProperties,
-        $transform
-    );
-
-    @media (prefers-color-scheme: dark) {
+    & {
         @include themed-property(
-            $dark,
+            $light,
             $property,
             $color,
             $additionalPropertiesUpFront,
@@ -82,10 +79,23 @@
             $transform
         );
     }
+
+    @media (prefers-color-scheme: dark) {
+        & {
+            @include themed-property(
+                $dark,
+                $property,
+                $color,
+                $additionalPropertiesUpFront,
+                $additionalProperties,
+                $transform
+            );
+        }
+    }
 }
 
 @mixin mq($name) {
-    $min: breakpoint-min($name, $breakpoints);
+    $min: functions.breakpoint-min($name, variables.$breakpoints);
     @if $min {
         @media (min-width: $min) {
             @content;
@@ -96,7 +106,7 @@
 }
 
 @mixin mq-down($name) {
-    $min: breakpoint-min($name, $breakpoints);
+    $min: functions.breakpoint-min($name, variables.$breakpoints);
     @if $min {
         @media (max-width: ($min - 1px)) {
             @content;

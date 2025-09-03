@@ -1,3 +1,6 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
 // Adapted from https://github.com/sindresorhus/github-markdown-css
 .markdown {
     -ms-text-size-adjust: 100%;
@@ -54,7 +57,7 @@
     background-color: initial;
     text-decoration: none;
 
-    @include t(color, 'link-color');
+    @include mixins.t(color, 'link-color');
 }
 
 .markdown a:active,
@@ -93,16 +96,16 @@
 .markdown img {
     max-width: 100%;
     border-style: none;
-    border-radius: $border-radius;
-    @include t(background-color, 'bg-color');
+    border-radius: variables.$border-radius;
+    @include mixins.t(background-color, 'bg-color');
 }
 
 .markdown img[align='right'] {
-    padding-left: $spacing-x;
+    padding-left: variables.$spacing-x;
 }
 
 .markdown img[align='left'] {
-    padding-right: $spacing-x;
+    padding-right: variables.$spacing-x;
 }
 
 .markdown figure {
@@ -111,7 +114,7 @@
 
     & figcaption {
         text-align: center;
-        @include t(color, 'gray');
+        @include mixins.t(color, 'gray');
     }
 }
 
@@ -326,11 +329,11 @@
     background-color: #2d2d2d;
     font-family: monospace;
     user-select: none;
-    border-radius: 0 0 0 $border-radius;
+    border-radius: 0 0 0 variables.$border-radius;
 }
 
 .markdown pre[class*='language-'] {
-    border-radius: $border-radius;
+    border-radius: variables.$border-radius;
 }
 
 .markdown code,
@@ -389,7 +392,7 @@
 .markdown kbd {
     display: inline-block;
     padding: 3px 5px;
-    font: 11px $font-family-monospace;
+    font: 11px variables.$font-family-monospace;
     line-height: 10px;
     color: #444d56;
     vertical-align: middle;
@@ -459,11 +462,11 @@
 .markdown table tr {
     border-top: 1px solid #c6cbd1;
 
-    @include t(background-color, 'bg-color');
+    @include mixins.t(background-color, 'bg-color');
 }
 
 .markdown table tr:nth-child(2n) {
-    @include t(background-color, 'gray-lightest');
+    @include mixins.t(background-color, 'gray-lightest');
 }
 
 //-------------
@@ -475,7 +478,7 @@
     font-size: 85%;
     border-radius: 3px;
 
-    @include t(
+    @include mixins.t(
         background-color,
         'gray-light',
         $transform: 'transparentize-strong'
@@ -503,7 +506,7 @@
     line-height: 1.45;
     border-radius: 3px;
 
-    @include t(background-color, 'gray-lightest');
+    @include mixins.t(background-color, 'gray-lightest');
 }
 
 .markdown pre code {

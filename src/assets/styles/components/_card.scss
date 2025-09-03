@@ -1,12 +1,15 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
 .card {
-    margin: $spacing-y 0;
+    margin: variables.$spacing-y 0;
 
     & .card__title {
         // font-weight: normal;
         margin: 0;
 
         & a {
-            color: $brand-color-primary;
+            color: variables.$brand-color-primary;
             text-decoration: none;
 
             &:hover,
@@ -17,14 +20,14 @@
     }
 
     & .card__description {
-        margin: $spacing-y-small 0;
+        margin: variables.$spacing-y-small 0;
     }
 }
 
 .card--post {
     // Apply margin-top to li to add spacing between tags on small screens
     & .card--post__taglist li {
-        margin-top: $spacing-y-small;
+        margin-top: variables.$spacing-y-small;
     }
 }
 
@@ -45,8 +48,8 @@
         box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
     }
 
-    @include t(background-color, 'bg-color', $transform: 'darken-light');
-    @include t(color, 'text-color');
+    @include mixins.t(background-color, 'bg-color', $transform: 'darken-light');
+    @include mixins.t(color, 'text-color');
 }
 
 .card-grid {

@@ -1,3 +1,6 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
 .post::before {
     counter-reset: figcaption;
 }
@@ -6,16 +9,16 @@
     // counter-reset: figcaption 1;
 
     & .post__heading {
-        margin-bottom: $spacing-y;
+        margin-bottom: variables.$spacing-y;
 
         & .post__date {
             display: inline-block;
-            margin-top: 2 * $spacing-y-small;
+            margin-top: 2 * variables.$spacing-y-small;
         }
 
         & .post__tags .taglist__tag {
-            margin-top: 2 * $spacing-y-small;
-            margin-bottom: $spacing-y-small;
+            margin-top: 2 * variables.$spacing-y-small;
+            margin-bottom: variables.$spacing-y-small;
         }
 
         & .post__description {
@@ -60,7 +63,7 @@
             content: 'Figure ' counter(figcaption) '. ';
         }
 
-        @include mq-down('md') {
+        @include mixins.mq-down('md') {
             & .code-block-wrapper {
                 width: 100vw;
                 margin-left: -5vw;
@@ -81,8 +84,8 @@
     }
 
     & .post__footer {
-        margin-top: $spacing-y;
-        padding-top: $spacing-y;
+        margin-top: variables.$spacing-y;
+        padding-top: variables.$spacing-y;
 
         & .links {
             display: flex;
@@ -99,8 +102,8 @@
             }
             .back {
                 display: inline-block;
-                padding: 0.5rem $spacing-x;
-                background-color: $brand-color-primary;
+                padding: 0.5rem variables.$spacing-x;
+                background-color: variables.$brand-color-primary;
                 color: white;
             }
 
@@ -111,7 +114,7 @@
 
         & .post__comments {
             & > h2 {
-                margin-top: ($spacing-y - 1rem);
+                margin-top: (variables.$spacing-y - 1rem);
             }
 
             & > .giscus {

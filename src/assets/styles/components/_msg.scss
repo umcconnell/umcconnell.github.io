@@ -1,12 +1,15 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
 .msg {
     padding: 1rem;
     margin: 0.5rem 0;
     border-left: 6px solid #ddd;
-    border-radius: $border-radius;
+    border-radius: variables.$border-radius;
 
-    @include t(background-color, 'gray-lightest');
+    @include mixins.t(background-color, 'gray-lightest');
 
-    @include mq('lg') {
+    @include mixins.mq('lg') {
         padding-left: 1.5rem;
     }
 
@@ -21,22 +24,22 @@
 
     &.msg--note,
     &.msg--info {
-        border-left-color: $info-blue;
+        border-left-color: variables.$info-blue;
     }
 
     &.msg--success,
     &.msg--tip {
-        border-left-color: $success-green;
+        border-left-color: variables.$success-green;
     }
 
     &.msg--warning {
-        border-left-color: $warning-orange;
+        border-left-color: variables.$warning-orange;
     }
 
     &.msg--danger,
     &.msg--error,
     &.msg--stop,
     &.msg--alert {
-        border-left-color: $danger-red;
+        border-left-color: variables.$danger-red;
     }
 }
