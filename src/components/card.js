@@ -24,14 +24,6 @@ export const card = (title, link, description, cssClass = '') =>
         <p class="card__description">${description}</p>
     </div>`
 
-/* {% macro taglist(list, class="", start=1) %}
-<ul class="taglist {{class}}">
-    {% for tag in list.slice(start) %}
-        <li class="taglist__tag"><a href="{{ '/posts/tags/' + tag | url}}">#{{ tag }}</a></li>
-    {% endfor %}
-</ul>
-{% endmacro %} */
-
 export const postcard = (url, title, date, description, tags, cssClass = '') =>
     `<div class="card card--post ${cssClass}">
         <h2 class="card__title"><a href="${url}">${title}</a></h2>
