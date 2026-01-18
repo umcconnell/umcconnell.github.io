@@ -28,3 +28,42 @@ export function enumerate(arr) {
 export function sourceRepo(path) {
     return `${this.ctx.meta.code.repo}/tree/${this.ctx.meta.code.branch}/${path}`
 }
+
+/**
+ * Decode HTML entities in a string
+ */
+function decodeHtmlEntities(str) {
+    const entities = {
+        '&amp;': '&',
+        '&lt;': '<',
+        '&gt;': '>',
+        '&quot;': '"',
+        '&#39;': "'",
+        '&apos;': "'",
+        '&nbsp;': ' '
+    }
+    return str.replace(/&(?:amp|lt|gt|quot|apos|nbsp|#39);/g, (match) => entities[match] || match)
+}
+
+/**
+ * Extract table of contents from HTML content
+ * Returns an array of heading objects with id, text, and level
+ */
+export function extractToc(content) {
+    if (!content) return []
+
+    const headingRegex = /<h([2-3])\s+id="([^"]+)"[^>]*>([\s\S]*?)<\/h[2-3]>/gi
+    const headings = []
+    let match
+
+    while ((match = headingRegex.exec(content)) !== null) {
+        const level = parseInt(match[1], 10)
+        const id = match[2]
+        // Strip HTML tags, decode entities, and get text content
+        const text = decodeHtmlEntities(match[3].replace(/<[^>]*>/g, '').trim())
+
+        headings.push({ level, id, text })
+    }
+
+    return headings
+}
