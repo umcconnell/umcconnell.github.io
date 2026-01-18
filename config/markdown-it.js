@@ -3,7 +3,6 @@ import markdownIt from 'markdown-it'
 import katex from './markdown-it/katex.js'
 import anchor from './markdown-it/anchor.js'
 import footnote from './markdown-it/footnote.js'
-import toc from './markdown-it/toc.js'
 
 import externalLinks from './markdown-it/external-link.js'
 import anchorLink from './markdown-it/anchor-link.js'
@@ -23,6 +22,5 @@ const md = markdownIt(config)
     .use(anchor)
     .use(externalLinks)
     .use(anchorLink)
-    .use(toc)
 
 export default md
