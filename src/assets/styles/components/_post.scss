@@ -83,6 +83,31 @@
         }
     }
 
+    // Layout for content + TOC sidebar
+    & .post__body {
+        position: relative;
+    }
+
+    & .post__sidebar {
+        display: none;
+
+        @include mixins.mq('xxl') {
+            display: block;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            width: 220px;
+            margin-left: 2rem;
+            height: 100%;
+        }
+
+        // The TOC inside is sticky within the sidebar
+        .toc--sidebar {
+            position: sticky;
+            top: 2rem;
+        }
+    }
+
     & .post__footer {
         margin-top: variables.$spacing-y;
         padding-top: variables.$spacing-y;

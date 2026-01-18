@@ -1,0 +1,149 @@
+@use '../utils/mixins';
+@use '../utils/variables';
+
+// Table of Contents Widget
+
+.toc {
+    font-size: 0.875rem;
+    line-height: 1.5;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin: 0;
+
+        @include mixins.t(color, 'gray');
+    }
+
+    &__toggle {
+        @include mixins.button-reset();
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.5rem;
+        height: 1.5rem;
+        cursor: pointer;
+
+        @include mixins.t(color, 'gray');
+
+        &:hover {
+            @include mixins.t(color, 'text-color');
+        }
+
+        .icon {
+            width: 1rem;
+            height: 1rem;
+            transition: transform 0.2s ease;
+        }
+
+        @include mixins.mq('xxl') {
+            display: none;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__link {
+        display: block;
+        padding: 0.375rem 0;
+        padding-left: 0.75rem;
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        transition:
+            color 0.15s ease,
+            border-color 0.15s ease,
+            border-left-width 0.15s ease;
+
+        @include mixins.t(color, 'gray-dark');
+        @include mixins.t(border-left-color, 'gray-light');
+
+        &:hover {
+            text-decoration: none;
+            @include mixins.t(color, 'link-color');
+        }
+
+        &.is-active {
+            font-weight: 500;
+            border-left-width: 3px;
+            @include mixins.t(color, 'link-color');
+            border-left-color: variables.$brand-color-primary;
+        }
+    }
+
+    // Nested items (h3)
+    &__item--nested {
+        .toc__link {
+            padding-left: 1.5rem;
+            font-size: 0.8125rem;
+        }
+    }
+}
+
+// Mobile: collapsible at top
+.toc--mobile {
+    @include mixins.t(background-color, 'gray-lightest');
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+
+    .toc__header {
+        margin-bottom: 0;
+    }
+
+    .toc__list {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding-top: 0;
+    }
+
+    &.is-open {
+        .toc__list {
+            max-height: 1000px;
+            padding-top: 0.75rem;
+        }
+
+        .toc__toggle .icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    @include mixins.mq('xxl') {
+        display: none;
+    }
+}
+
+// Desktop: sidebar on the right
+.toc--sidebar {
+    display: none;
+
+    @include mixins.mq('xxl') {
+        display: block;
+        position: sticky;
+        top: 2rem;
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
+    }
+
+    .toc__header {
+        margin-bottom: 0.75rem;
+    }
+}
+
