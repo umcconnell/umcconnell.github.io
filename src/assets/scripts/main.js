@@ -4,3 +4,4 @@ import 'focus-visible'
 // Internal Modules
 import './modules/nav.js'
 import './modules/easteregg.js'
+import './modules/toc.js'
