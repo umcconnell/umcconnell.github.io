@@ -23,8 +23,6 @@ remarried Eugene Wigner's friend Paul Dirac, another equally famous physicist an
 Quantum Mechanics. Subsequently, Gabriel chose to take on the name Dirac. More interesting biographical details
 can be found in the essay about [Paul Dirac](https://mathshistory.st-andrews.ac.uk/Biographies/Dirac/) on MacTutor.
 
-[[toc]]
-
 ## Dirac's theorem
 
 Although the following definitions are standard in graph theory, it is useful to specify them at the outset
