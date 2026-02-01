@@ -1,23 +1,21 @@
 ---
-layout: base
+layout: archive
 pagination:
-    data: collections
+    data: collections.allTagsAndYears
     size: 1
-    alias: tag
-    filter:
-        - all
-permalink: '/posts/tags/{{ tag }}/'
+    alias: tagObj
+permalink: '/posts/tags/{{ tagObj.tagName }}/'
+eleventyComputed:
+    title: "Posts Tagged \"{{ tagObj.tagName | capitalize }}\""
 ---
 
-<div class="container">
-    <h1>Posts Tagged "{{ tag }}"</h1>
 
-    <ul>
-        {% set tags = collections[ tag ] %}
-        {% for post in tags | reverse %}
+<div class="archive__main">
+    <ol>
+        {% for post in tagObj.posts | reverse %}
             {% set post_url %}{{ post.url | url }}{% endset %}
             {% set post_date %}{{ post.data.date | dateLong }}{% endset %}
             <li>{% postcard post_url, post.data.title, post_date, post.data.description, post.data.tags %}</li>
         {% endfor %}
-    </ul>
+    </ol>
 </div>

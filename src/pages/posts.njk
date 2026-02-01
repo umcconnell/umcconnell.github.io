@@ -1,31 +1,24 @@
 ---
-layout: base
+layout: archive
+title: Archive
 eleventyNavigation:
     key: Posts
 pagination:
     data: collections.posts
-    size: 8
+    size: 5
     reverse: true
 permalink: "/posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}"
 ---
 
 {% import "../components/pagination.njk" as paginationNav %}
-
-<div class="container">
-    <h1>Archive
-    <a
-        href="{{ '/posts/search' | url }}"
-        class="search__icon-header"
-        aria-label="Access search"
-    >{% icon "search" %}</a>
-    </h1>
-
+ 
+<div class="archive__main">
     <ol>
-    {% for post in pagination.items  %}
+        {% for post in pagination.items  %}
         {% set post_url %}{{ post.url | url }}{% endset %}
         {% set post_date %}{{ post.data.date | dateLong }}{% endset %}
         <li>{% postcard post_url, post.data.title, post_date, post.data.description, post.data.tags %}</li>
-    {% endfor %}
+        {% endfor %}
     </ol>
 
     {% if pagination.pages.length > 1 %}

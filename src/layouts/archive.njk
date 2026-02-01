@@ -1,0 +1,65 @@
+{% extends "src/layouts/base.njk" %}
+
+{% block content %}
+
+<div class="container archive">
+    <h1>{{ title }}</h1>
+
+    {{ content | safe}}
+
+    <aside class="archive__sidebar">
+        {% if not hideSearchWidget %}
+        <div class="sidebar-widget widget-search">
+             <h3 class="widget-title">{% icon "search" %} Search</h3>
+             <form action="/posts/search/" method="get" class="search-form">
+                <div class="search-input-wrapper">
+                    <input type="text" name="q" placeholder="Search posts..." class="input--search" aria-label="Search posts">
+                    <button type="submit" class="search-submit" aria-label="Search">{% icon "search" %}</button>
+                </div>
+             </form>
+        </div>
+        {% endif %}
+
+        <div class="sidebar-widget widget-categories">
+            <h3 class="widget-title">{% icon "category" %} Categories</h3>
+            <ul class="category-list">
+            <li>
+                <a href="/posts/" {% if not tagObj and not hideSearchWidget %}class="active"{% endif %}>
+                    <span class="category-name">All Posts</span>
+                    <span class="category-count">{{ collections.posts | length }}</span>
+                </a>
+            </li>
+            {% set tagCounts = collections.posts | countTags %}
+            {% for cat in tagCounts | take(5) %}
+                <li>
+                    <a href="/posts/tags/{{ cat.name }}" {% if tagObj and tagObj.tagName == cat.name %}class="active"{% endif %}>
+                        <span class="category-name">{{ cat.name | capitalize }}</span>
+                        <span class="category-count">{{ cat.count }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+
+        <div class="sidebar-widget widget-year">
+            <h3 class="widget-title">{% icon "calendar" %} Year</h3>
+            <div class="year-chips">
+            {% set yearCounts = collections.posts | countYears %}
+            {% for yearItem in yearCounts | take(4) %}
+                 <a href="/posts/tags/{{ yearItem.year }}" class="chip{% if tagObj and tagObj.tagName == yearItem.year %} active{% endif %}">{{ yearItem.year }}</a>
+            {% endfor %}
+            </div>
+        </div>
+
+        <!--<div class="sidebar-widget widget-subscribe">
+            <h3 class="widget-title">{% icon "mail" %} Subscribe</h3>
+            <p>Get the latest posts delivered right to your inbox.</p>
+            <form action="#" class="subscribe-form">
+                <input type="email" placeholder="your@email.com" class="input--email" aria-label="Email address">
+                <button type="submit" class="btn btn-primary">Sign up</button>
+            </form>
+        </div>-->
+    </aside>
+</div>
+
+{% endblock %}
