@@ -17,6 +17,39 @@ export default async function (config) {
     config.addPlugin(pluginNavigation)
     config.addPlugin(pluginSyntaxHighlight)
 
+    // Collections
+    config.addCollection('allTagsAndYears', function (collectionApi) {
+        const posts = collectionApi.getFilteredByTag('posts')
+        const tagsMap = new Map()
+
+        posts.forEach((post) => {
+            // Handle regular tags
+            const tags = post.data.tags || []
+            const tagArray = typeof tags === 'string' ? [tags] : tags
+            tagArray.forEach((tag) => {
+                if (!tagsMap.has(tag)) tagsMap.set(tag, [])
+                tagsMap.get(tag).push(post)
+            })
+
+            // Handle year
+            if (post.date) {
+                const year = post.date.getFullYear().toString()
+                if (!tagsMap.has(year)) tagsMap.set(year, [])
+                // Avoid duplicates if year is already a tag
+                if (!tagArray.includes(year)) {
+                    tagsMap.get(year).push(post)
+                }
+            }
+        })
+
+        return Array.from(tagsMap.entries()).map(([tag, posts]) => {
+            return {
+                tagName: tag,
+                posts: posts
+            }
+        })
+    })
+
     // Filters
     Object.keys(filters).forEach((name) => {
         config.addFilter(name, filters[name])
