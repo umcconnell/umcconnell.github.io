@@ -67,3 +67,38 @@ export function extractToc(content) {
 
     return headings
 }
+
+export function countTags(posts) {
+    const counts = {};
+    const excludedTags = ['all', 'posts'];
+
+    posts.forEach(post => {
+        if (post.data.tags) {
+            const tags = typeof post.data.tags === 'string' ? [post.data.tags] : post.data.tags;
+            tags.forEach(tag => {
+                if (!excludedTags.includes(tag)) {
+                    counts[tag] = (counts[tag] || 0) + 1;
+                }
+            });
+        }
+    });
+    // Convert to array and sort by count desc, then name asc
+    return Object.entries(counts)
+        .map(([name, count]) => ({ name, count }))
+        .sort((a, b) => {
+            const diff = b.count - a.count;
+            if (diff !== 0) return diff;
+            return a.name.localeCompare(b.name);
+        });
+}
+
+export function countYears(posts) {
+    const counts = {};
+    posts.forEach(post => {
+        const year = new Date(post.date).getFullYear();
+        counts[year] = (counts[year] || 0) + 1;
+    });
+    return Object.entries(counts)
+        .map(([year, count]) => ({ year, count }))
+        .sort((a, b) => b.year - a.year);
+}
