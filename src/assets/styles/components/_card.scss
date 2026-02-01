@@ -25,7 +25,6 @@
 }
 
 .card--post {
-
     // Apply margin-top to li to add spacing between tags on small screens
     & .card--post__taglist li {
         margin-top: variables.$spacing-y-small;

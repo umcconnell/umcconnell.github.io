@@ -18,7 +18,9 @@
     @include mixins.t(border-color, 'gray-light');
     @include mixins.t(background-color, 'bg-color');
     border-radius: 0.7rem;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
 
     &:hover {
         transform: translateY(-4px);
@@ -45,7 +47,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, variables.$brand-color-primary 0%, #4a69bd 100%);
+            background: linear-gradient(
+                135deg,
+                variables.$brand-color-primary 0%,
+                #4a69bd 100%
+            );
             color: white;
             font-weight: 700;
             font-size: 1.5rem;
