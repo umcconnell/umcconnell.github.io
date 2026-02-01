@@ -13,39 +13,53 @@ eleventyNavigation:
         tools. This is mostly a curated compilation of my Github repos.
     </p>
 
-    {% card "servum", "https://github.com/umcconnell/servum",
-        "A simple, fast, static server written in Rust. No dependencies. HTTP only." %}
+    <div class="project-grid u-mt2">
+        {% for project in projects %}
+        {% if project.type == 'project' %}
+            <div class="card card--project">
+                {% if project.github %}
+                    {% set repoPath = project.github | replace("https://github.com/", "") %}
+                    {% set imageUrl = "https://opengraph.githubassets.com/1/" + repoPath %}
+                    <div class="card__image">
+                        <img src="{{ imageUrl }}" alt="{{ project.title }}" loading="lazy" width="600" height="300">
+                    </div>
+                {% elseif project.image %}
+                    <div class="card__image">
+                        <img src="{{ project.image | url }}" alt="{{ project.title }}" loading="lazy" width="600" height="300">
+                    </div>
+                {% else %}
+                    <div class="card__image card__image--placeholder">
+                        <span>{{ project.title }}</span>
+                    </div>
+                {% endif %}
+                <div class="card__content">
+                    <h3 class="card__title">{{ project.title }}</h3>
+                    <p class="card__description">{{ project.description | safe }}</p>
+                    
+                    <div class="card__tags">
+                        {% for tag in project.tags %}
+                            <span class="chip">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
 
-    {% card "destroyer2", "https://github.com/umcconnell/destroyer2",
-        'Online multiplayer battleship game. Uses node and redis.<br />
-        Play here: <a href="https://destroyer2.herokuapp.com/" target="_blank"\
-        >https://destroyer2.herokuapp.com/</a>' %}
-
-    {% card "aquila", "https://github.com/intelligenerator/aquila",
-        "AI to assess building damage from satellite imagery after natural catastrophes.\
-        <br />Written using Python and Pytorch. \
-        <br />Finalist in the <a href='https://www.youtube.com/watch?v=gpNNUA7R4KM&t=1189s' \
-        target='_blank' rel='noopener noreferrer'>BWKI 2020 competition</a>." %}
-
-    {% card "lc4", "https://github.com/umcconnell/lc4",
-        'JavaScript encryption-decryption library for the lc4 cipher.<br />\
-        Additional UI: <a href="https://lc4-encryptor.glitch.me"\
-        target="_blank">https://lc4-encryptor.glitch.me</a>' %}
-
-    {% card "typespeed", "https://github.com/umcconnell/typespeed",
-        'A speed typing game.<br />Play here:\
-        <a href="https://umcconnell.github.io/typespeed/" target="_blank"\
-        >https://umcconnell.github.io/typespeed/</a>' %}
-
-    {% card "tic-tac-toe", "https://github.com/umcconnell/tic-tac-toe",
-        "Unbeatable Python tic-tac-toe game with minimax. UI using Qt." %}
-
-    {% card "Lambert's problem", "https://www.umcconnell.net/lamberts-problem/",
-        "High school physics project on Lambert's problem.<br>Received the \
-        <a href='https://www.physik.lmu.de/de/fuer-die-schule-und-oeffentlichkeit/fuer-lehrkraefte/seminararbeitspreis.html' \
-        target='_blank' rel='noopener noreferrer'>DPG-Seminararbeitspreis 2022</a> \
-        (<a href='https://www.emeriti-of-excellence.tum.de/fileadmin/w00bpl/www/Sonstiges_pdf/2022-06-10_Laudationes-Physikpreis2022-Kleber.pdf' \
-        target='_blank' rel='noopener noreferrer'>Laudation</a> by Prof. Manfred Kleber from TUM)" %}
+                    <div class="card__footer">
+                        {% if project.github %}
+                            <a href="{{ project.github }}" target="_blank" rel="noopener noreferrer" class="link--icon">
+                                {% icon "github" %} GitHub
+                            </a>
+                        {% endif %}
+                        
+                        {% if project.url and project.url != project.github %}
+                             <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="link--demo">
+                                {% icon "link-external" %} Open
+                             </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
 
     <h2>Tools</h2>
 
@@ -53,19 +67,52 @@ eleventyNavigation:
         Some of the mostly random small tools I've built at some point or another to
         solve a specific problem.
     </p>
-    
-    {% card "cp", "https://www.umcconnell.net/cp/",
-       " A no-datastore, client-side pastebin using LZMA compression." %}
 
-    {% card "LC4 encryptor", "https://www.umcconnell.net/lc4-encryptor/",
-       "A LC4 and LS47 encryption/decryption tool. Frontend for my lc4 library." %}
-    
-    {% card "abgeordnetenvergleich", "https://www.umcconnell.net/abgeordnetenvergleich/",
-       "A tool to compare the voting behavior of German parliamentarians." %}
+    <div class="project-grid u-mt2">
+        {% for project in projects %}
+        {% if project.type == 'tool' %}
+            <div class="card card--project">
+                {% if project.github %}
+                    {% set repoPath = project.github | replace("https://github.com/", "") %}
+                    {% set imageUrl = "https://opengraph.githubassets.com/1/" + repoPath %}
+                    <div class="card__image">
+                        <img src="{{ imageUrl }}" alt="{{ project.title }}" loading="lazy" width="600" height="300">
+                    </div>
+                {% elseif project.image %}
+                    <div class="card__image">
+                        <img src="{{ project.image | url }}" alt="{{ project.title }}" loading="lazy" width="600" height="300">
+                    </div>
+                {% else %}
+                    <div class="card__image card__image--placeholder">
+                        <span>{{ project.title }}</span>
+                    </div>
+                {% endif %}
+                <div class="card__content">
+                    <h3 class="card__title">{{ project.title }}</h3>
+                    <p class="card__description">{{ project.description | safe }}</p>
+                    
+                    <div class="card__tags">
+                        {% for tag in project.tags %}
+                            <span class="chip">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
 
-    {% card "EMT book chooser", "https://www.umcconnell.net/emt-book-chooser/",
-       "Book recommendation tool for a high school English class." %}
-    
-    {% card "Latein Verben Trainer", "https://www.umcconnell.net/latein-verben-trainer/",
-         "Study latin verb conjugation." %}
+                    <div class="card__footer">
+                        {% if project.github %}
+                            <a href="{{ project.github }}" target="_blank" rel="noopener noreferrer" class="link--icon">
+                                {% icon "github" %} GitHub
+                            </a>
+                        {% endif %}
+                        
+                        {% if project.url and project.url != project.github %}
+                             <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="link--demo">
+                                {% icon "link-external" %} Open
+                             </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
 </div>
