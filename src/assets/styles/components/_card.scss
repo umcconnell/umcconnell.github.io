@@ -25,6 +25,7 @@
 }
 
 .card--post {
+
     // Apply margin-top to li to add spacing between tags on small screens
     & .card--post__taglist li {
         margin-top: variables.$spacing-y-small;
@@ -33,15 +34,22 @@
 
 .card--post-preview {
     margin: 0;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     border-radius: 0.7rem;
     max-width: calc(100vw - 2rem);
     text-decoration: none;
     transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
 
     & .card--post-preview__title {
         margin: 0;
         font-weight: bold;
+    }
+
+    & .link {
+        margin-top: auto;
+        padding-top: 0.5rem;
     }
 
     &:hover {
