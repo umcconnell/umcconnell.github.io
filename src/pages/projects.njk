@@ -17,11 +17,9 @@ eleventyNavigation:
         {% for project in projects %}
         {% if project.type == 'project' %}
             <div class="card card--project">
-                {% if project.github %}
-                    {% set repoPath = project.github | replace("https://github.com/", "") %}
-                    {% set imageUrl = "https://opengraph.githubassets.com/1/" + repoPath %}
+                {% if project.localImage %}
                     <div class="card__image">
-                        <img src="{{ imageUrl }}" alt="{{ project.title }}" loading="lazy" width="600" height="300">
+                        <img src="{{ project.localImage | url }}" alt="{{ project.title }}" loading="lazy" width="600" height="300">
                     </div>
                 {% elseif project.image %}
                     <div class="card__image">
@@ -72,11 +70,9 @@ eleventyNavigation:
         {% for project in projects %}
         {% if project.type == 'tool' %}
             <div class="card card--project">
-                {% if project.github %}
-                    {% set repoPath = project.github | replace("https://github.com/", "") %}
-                    {% set imageUrl = "https://opengraph.githubassets.com/1/" + repoPath %}
+                {% if project.localImage %}
                     <div class="card__image">
-                        <img src="{{ imageUrl }}" alt="{{ project.title }}" loading="lazy" width="600" height="300">
+                        <img src="{{ project.localImage | url }}" alt="{{ project.title }}" loading="lazy" width="600" height="300">
                     </div>
                 {% elseif project.image %}
                     <div class="card__image">
