@@ -10,8 +10,14 @@ import * as filters from './utils/filters.js'
 import * as transforms from './utils/transforms.js'
 import { shortcodes, pairedShortcodes } from './utils/shortcodes.js'
 import iconsprite from './utils/iconsprite.js'
+import download_project_images from './utils/download_project_images.js'
 
 export default async function (config) {
+    // Download project images before building the site
+    config.on('eleventy.before', async () => {
+        await download_project_images()
+    })
+
     // Plugins
     config.addPlugin(pluginRss)
     config.addPlugin(pluginNavigation)

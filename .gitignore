@@ -1,4 +1,5 @@
 node_modules
 dist
 src/posts/drafts
+src/assets/images/projects/
 .env
