@@ -9,8 +9,8 @@
     },
     {
         "title": "destroyer2",
-        "description": "Online multiplayer battleship game. Uses node and redis.<br />Play here: <a href=\"https://destroyer2.herokuapp.com/\" target=\"_blank\">https://destroyer2.herokuapp.com/</a>",
-        "url": "https://destroyer2.herokuapp.com/",
+        "description": "Online multiplayer battleship game. Uses node and redis.<br />Play here: <a href=\"https://destroyer2.onrender.com/\" target=\"_blank\">https://destroyer2.onrender.com/</a>",
+        "url": "https://destroyer2.onrender.com/",
         "github": "https://github.com/umcconnell/destroyer2",
         "tags": ["Node.js", "Redis", "Game"],
         "type": "project"
@@ -26,7 +26,7 @@
     {
         "title": "lc4",
         "description": "JavaScript encryption-decryption library for the lc4 cipher.<br />Additional UI: <a href=\"https://lc4-encryptor.glitch.me\" target=\"_blank\">https://lc4-encryptor.glitch.me</a>",
-        "url": "https://lc4-encryptor.glitch.me",
+        "url": "https://www.umcconnell.net/lc4-encryptor/",
         "github": "https://github.com/umcconnell/lc4",
         "tags": ["JavaScript", "Crypto", "Library"],
         "type": "project"
