@@ -31,7 +31,7 @@
         "@babel/preset-env": "^7.29.0",
         "@babel/runtime": "^7.28.6",
         "@iktakahiro/markdown-it-katex": "^4.0.1",
-        "babel-loader": "^10.0.0",
+        "babel-loader": "^10.1.1",
         "clean-css": "^5.3.3",
         "critical": "^7.2.1",
         "cssesc": "^3.0.0",
