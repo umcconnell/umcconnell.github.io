@@ -91,6 +91,7 @@ export default async function (config) {
 
     // Asset Watch Targets
     config.addWatchTarget('./src/assets')
+    config.addWatchTarget('./src/data/publications.bib')
 
     // Markdown
     config.setLibrary('md', markdownIt)

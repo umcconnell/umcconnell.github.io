@@ -11,7 +11,7 @@ eleventyNavigation:
     <p>My name is {{ meta.author }}. I like books, computers and science.</p>
 
     <p>I publish most of my code on
-    <a href="https://github.com/umcconnell" target="_blank">Github</a>.</p>
+    <a href="https://github.com/umcconnell" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
 
     <p>
         You can reach out to me through my e-mail address:
@@ -21,6 +21,58 @@ eleventyNavigation:
             style="height: 1.1rem"
         />
     </p>
+
+    <h2 class="u-mt2">Research</h2>
+
+    <p>
+        I am an MSc student in Data Science at
+        <a href="https://ethz.ch" target="_blank" rel="noopener noreferrer">ETH Zürich</a>,
+        where I also completed my BSc in Computer Science. My research
+        interests are algorithm design and AI for bioinformatics.
+    </p>
+
+    <p>
+        You can also find me on
+        <a href="{{ meta.social_media.google_scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        and
+        <a href="{{ meta.social_media.orcid }}" target="_blank" rel="noopener noreferrer">ORCID</a>.
+        My full CV is available
+        <a href="{{ '/assets/other/CV_Ulysse_McConnell.pdf' | url }}" target="_blank" rel="noopener noreferrer">here</a>.
+    </p>
+
+    {% msg "success", true, "🎓 Looking for a PhD or research position" %}
+    <p>
+        I am currently looking for a PhD or research position at the intersection of AI and bioinformatics, or related
+        areas of computer science. Feel free to get in touch via e-mail!
+    </p>
+    {% endmsg %}
+
+    <h3 class="u-mt2">Publications</h3>
+
+    <ol class="cv-list" reversed>
+        {% for pub in publications %}
+        <li class="cv-item">
+            <span class="cv-item__date">{{ pub.year }}</span>
+            <div>
+                <span class="cv-item__title">{{ pub.title }}</span>
+                <span class="pub__authors">
+                    {%- for author in pub.authors -%}
+                    {% if author == meta.author %}<span class="pub__me">{{ author }}</span>{% else %}{{ author }}{% endif %}{% if not loop.last %}, {% endif %}
+                    {%- endfor -%}
+                </span>
+                <span class="pub__venue">{{ pub.venue }}</span>
+                {% if pub.note or pub.links | length %}
+                <span class="pub__links">
+                    {% if pub.note %}<span class="pub__badge">{{ pub.note }}</span>{% endif %}
+                    {% for link in pub.links %}
+                    <a class="pub__badge" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+                    {% endfor %}
+                </span>
+                {% endif %}
+            </div>
+        </li>
+        {% endfor %}
+    </ol>
 
     <h3 class="u-mt1 u-mb1">PGP Key</h3>
 
@@ -42,48 +94,48 @@ eleventyNavigation:
     <ul class="u-mt1">
         <li>
             <strong>Static site generator</strong>:
-            <a href="https://11ty.dev" target="_blank" rel="noreferer noopener">11ty</a>
-            (<a href="https://github.com/11ty/eleventy/blob/main/LICENSE" target="_blank" rel="noreferer noopener">MIT License</a>)
+            <a href="https://11ty.dev" target="_blank" rel="noopener noreferrer">11ty</a>
+            (<a href="https://github.com/11ty/eleventy/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>)
         </li>
         <li>
             <strong>11ty base template</strong>:
-            <a href="https://github.com/maxboeck/eleventastic" target="_blank" rel="noreferer noopener">eleventastic</a>
-            (<a href="https://github.com/maxboeck/eleventastic/blob/master/LICENSE" target="_blank" rel="noreferer noopener">MIT License</a>)
+            <a href="https://github.com/maxboeck/eleventastic" target="_blank" rel="noopener noreferrer">eleventastic</a>
+            (<a href="https://github.com/maxboeck/eleventastic/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>)
         </li>
         <li>
             <strong>Templating language</strong>:
-            <a href="https://mozilla.github.io/nunjucks/" target="_blank" rel="noreferer noopener">Nunjucks</a>
-            (<a href="https://github.com/mozilla/nunjucks/blob/master/LICENSE" target="_blank" rel="noreferer noopener">BSD 2-Clause LICENSE</a>)
+            <a href="https://mozilla.github.io/nunjucks/" target="_blank" rel="noopener noreferrer">Nunjucks</a>
+            (<a href="https://github.com/mozilla/nunjucks/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">BSD 2-Clause License</a>)
         </li>
         <li>
             <strong>Markdown</strong>:
-            <a href="https://github.com/markdown-it/markdown-it" target="_blank" rel="noreferer noopener">markdown-it</a>
-            (<a href="https://github.com/markdown-it/markdown-it/blob/master/LICENSE" target="_blank" rel="noreferer noopener">MIT License</a>)
+            <a href="https://github.com/markdown-it/markdown-it" target="_blank" rel="noopener noreferrer">markdown-it</a>
+            (<a href="https://github.com/markdown-it/markdown-it/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>)
         </li>
         <li>
-            <strong>Code Highlighting</strong>:
-            <a href="https://prismjs.com/" target="_blank" rel="noreferer noopener">Prism.js</a>
-            (<a href="https://github.com/PrismJS/prism/blob/master/LICENSE" target="_blank" rel="noreferer noopener">MIT License</a>)
+            <strong>Code highlighting</strong>:
+            <a href="https://prismjs.com/" target="_blank" rel="noopener noreferrer">Prism.js</a>
+            (<a href="https://github.com/PrismJS/prism/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>)
         </li>
         <li>
             <strong>Math</strong>:
-            <a href="https://katex.org/" target="_blank" rel="noreferer noopener">KaTeX</a>
-            (<a href="https://github.com/KaTeX/KaTeX/blob/main/LICENSE" target="_blank" rel="noreferer noopener">MIT License</a>)
+            <a href="https://katex.org/" target="_blank" rel="noopener noreferrer">KaTeX</a>
+            (<a href="https://github.com/KaTeX/KaTeX/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>)
         </li>
         <li>
             <strong>Search</strong>:
-            <a href="https://github.com/krisk/fuse" target="_blank" rel="noreferer noopener">Fuse</a>
-            (<a href="https://github.com/krisk/Fuse/blob/main/LICENSE" target="_blank" rel="noreferer noopener">Apache License 2.0</a>)
+            <a href="https://github.com/krisk/fuse" target="_blank" rel="noopener noreferrer">Fuse</a>
+            (<a href="https://github.com/krisk/Fuse/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">Apache License 2.0</a>)
         </li>
         <li>
             <strong>Icons</strong>:
-            <a href="https://primer.style/octicons/" target="_blank" rel="noreferer noopener">Primer Icons</a>
-            (<a href="https://github.com/primer/octicons/blob/main/LICENSE" target="_blank" rel="noreferer noopener">MIT License</a>)
+            <a href="https://primer.style/octicons/" target="_blank" rel="noopener noreferrer">Primer Icons</a>
+            (<a href="https://github.com/primer/octicons/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>)
         </li>
         <li>
-            <strong>Comment System</strong>:
-            <a href="https://giscus.app/" target="_blank" rel="noreferer noopener">giscus</a>
-            (<a href="https://github.com/giscus/giscus/blob/main/LICENSE" target="_blank" rel="noreferer noopener">MIT License</a>)
+            <strong>Comment system</strong>:
+            <a href="https://giscus.app/" target="_blank" rel="noopener noreferrer">giscus</a>
+            (<a href="https://github.com/giscus/giscus/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>)
         </li>
     </ul>
 </div>

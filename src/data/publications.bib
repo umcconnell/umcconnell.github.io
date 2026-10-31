@@ -1,0 +1,41 @@
+% Publications shown on the about page (parsed by src/data/publications.js).
+%
+% Entries are sorted by year (newest first); within a year, file order is kept.
+% Fields used:
+%   title, author, year
+%   booktitle / journal / howpublished (+ address)  -> venue
+%   note                                            -> badge (e.g. Poster)
+%   doi                                             -> "DOI" link
+%   eprint + archiveprefix (or eprinttype)          -> arXiv / bioRxiv link
+%   url                                             -> "Link" (only if no doi/eprint)
+
+@inproceedings{mcconnell2026slide,
+    title         = {Slide-level batch structure limits histology-guided supervision of transcriptomic foundation models},
+    author        = {McConnell, Ulysse and Nonchev, Kalin and K{\"o}lzer, Viktor and R{\"a}tsch, Gunnar},
+    booktitle     = {ICBINB-BIO Workshop, NeurIPS 2026},
+    year          = {2026},
+    eprinttype    = {bioRxiv},
+    eprint        = {10.64898/2026.09.30.755585},
+    note          = {Poster}
+}
+
+@misc{ambrozak2026crane,
+    title         = {{CRANE}: Correcting Errors in Raw Nanopore Signals Using Hidden {Markov} Models},
+    author        = {Ambrozak, Simon and McConnell, Ulysse and Srinivasan, Bhargav and Ozkan, Burak and Zhang, Ernest and Firtina, Can},
+    howpublished  = {Preprint},
+    year          = {2026},
+    archiveprefix = {arXiv},
+    eprint        = {2603.20420},
+    note          = {Under review}
+}
+
+@inproceedings{eris2025rawbench,
+    title         = {{RawBench}: A Comprehensive Benchmarking Framework for Raw Nanopore Signal Analysis Techniques},
+    author        = {Eris, Furkan and McConnell, Ulysse and Firtina, Can and Mutlu, Onur},
+    booktitle     = {ACM BCB 2025},
+    address       = {Philadelphia, USA},
+    year          = {2025},
+    doi           = {10.1145/3765612.3767302},
+    archiveprefix = {arXiv},
+    eprint        = {2510.03629}
+}
